@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .c1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 99;
+    }
+
+    .c2 {
+      height: 200px;
+      width: 300px;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -150px;
+      z-index: 100;
+    }
+
+    .hide {
+      display: none;
+    }
+
+  </style>
+
+</head>
+<body>
+
+<button id="add">新增</button>
+<table border="1">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>姓名</th>
+    <th>爱好</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>金老板</td>
+    <td>开车</td>
+    <td>
+      <button class="fire">开除</button>
+      <button class="edit">编辑</button>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>景女神</td>
+    <td>茶道</td>
+    <td>
+      <button class="fire">开除</button>
+      <button class="edit">编辑</button>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>苑昊（苑局）</td>
+    <td>不洗头、不翻车、不要脸</td>
+    <td>
+      <button class="fire">开除</button>
+      <button class="edit">编辑</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="cc hide">
+  <div class="c1"></div>
+  <div class="c2">
+    <div>
+      姓名: <input type="text" id="username">
+    </div>
+    <div>
+      爱好: <input type="text" id="hobby">
+    </div>
+    <div>
+      <button id="sub">提交</button>
+      <button id="cancel">取消</button>
+
+    </div>
+  </div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+  var editBtn;
+  var flag;  //标识一下是新增动作还是编辑动作保存
+  //新增
+  //1 点击新增按钮,弹出模态对话框,并且情况之前用户输入的内容
+  $('#add').click(function () {
+      $('.cc').removeClass('hide');
+      $('#username').val('');
+      $('#hobby').val('');
+      flag = 1;
+  });
+  // 2 用户输入内容,点击确定按钮,生成一条记录添加到table标签的最后面,并且关闭模态对话框
+  $('#sub').click(function () {
+      if (flag === 1){  //表示新增的保存动作
+          //2.1 获取用户输入的内容  (注:取变量名,尽量不要用name)
+        var username = $('#username').val();
+        var hobby = $('#hobby').val();
+        //2.2 创建tr标签,然后将用户输入的数据放到tr对应的td标签里面去啊
+        var newTr = '<tr><td><input type="checkbox"></td><td>'+username+'</td><td>'+ hobby +'</td><td><button class="fire">开除</button> <button class="edit">编辑</button></td></tr>';
+        //2.3 将新创建的tr标签添加到table标签的tbody的最后
+        $('tbody').append(newTr);
+        // 2.4 关闭模态对话框
+        // $('.cc').addClass('hide');
+      }else {  //表示编辑的保存动作
+
+        var newUsername = $('#username').val();
+        var newHobby = $('#hobby').val();
+
+        // 1.1 获取该行的数据
+        editBtn.parent().prev().text(newHobby);
+        editBtn.parent().prev().prev().text(newUsername);
+
+      }
+    $('.cc').addClass('hide');
+
+  });
+  //点击取消,关闭模态对话框
+  $('#cancel').click(function () {
+      $('.cc').addClass('hide');
+  });
+
+  //开除
+  // $('.fire').click(function () {
+  //     $(this).parent().parent().remove();
+  // });
+  $('tbody').on('click','.fire',function () {
+      $(this).parent().parent().remove();
+  });
+
+  //编辑
+  //1 弹出莫泰对话框,并且将之前的数据获取到,然后赋值给输入框
+  $('tbody').on('click','.edit',function () {
+      flag = 2;
+      editBtn = $(this);
+      $('.cc').removeClass('hide');
+      // 1.1 获取该行的数据
+        var hobby = $(this).parent().prev().text();
+        var username = $(this).parent().prev().prev().text();
+        //1.2 赋值给模态对话框中的input标签
+        $('#username').val(username);
+        $('#hobby').val(hobby);
+  });
+
+
+
+
+</script>
+</body>
+</html>

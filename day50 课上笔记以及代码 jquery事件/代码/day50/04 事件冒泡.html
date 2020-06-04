@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            background-color: red;
+            height: 200px;
+        }
+        #d2{
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="d1">
+    <div id="d2"></div>
+
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+    $('#d1').click(function () {
+        alert('父级标签');
+    });
+    $('#d2').click(function (e) {
+        alert('子级标签');
+        return false;
+        // e.stopPropagation();
+    });
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+    <div class="multi-menu">
+
+      {% for menu_k,menu_v in menu_dict.items %}
+{#        <a href="{{ menu.permissions__url }}" class="{{ menu.class }}">#}
+{#            <span class="icon-wrap"><i class="fa {{ menu.permissions__icon }}"></i></span> {{ menu.permissions__title }}</a>#}
+        <div class="item">
+          <div class="title">{{ menu_v.title }}</div>
+          <div class="body hidden">
+            {% for ermenu in menu_v.children %}
+              <a href="{{ ermenu.url }}">{{ ermenu.title }}</a>
+            {% endfor %}
+
+          </div>
+
+        </div>
+
+
+      {% endfor %}
+
+    </div>
+
+
+
+
+
+
+

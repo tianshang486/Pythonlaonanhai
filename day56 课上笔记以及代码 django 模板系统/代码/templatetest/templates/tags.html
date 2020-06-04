@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<ul>
+  {% for name in name_list %}
+    <li>{{ name }}</li>
+  {% endfor %}
+
+</ul>
+
+{#<ol>#}
+{#  {% for key,value in d1.items %}#}
+{#    {{ forloop.counter }}#}
+{#      <li>{{ key }} -- {{ value }}</li>#}
+{#  {% endfor %}#}
+
+{#    {% for key,value in d1.items %}#}
+{#    {{ forloop.counter0 }}#}
+{#      <li>{{ key }} -- {{ value }}</li>#}
+{#  {% endfor %}#}
+
+{#    {% for key,value in d1.items %}#}
+{#      {{ forloop.revcounter }}#}
+{#        <li>{{ key }} -- {{ value }}</li>#}
+{#    {% endfor %}#}
+
+{#      {% for key,value in d1.items %}#}
+{#        {{ forloop.revcounter0 }}#}
+{#          <li>{{ key }} -- {{ value }}</li>#}
+{#      {% endfor %}#}
+
+{#      {% for key,value in d1.items %}#}
+{#        {{ forloop.first }}#}
+{#          <li>{{ key }} -- {{ value }}</li>#}
+{#      {% endfor %}#}
+
+
+<!-- forloop.parentloop示例 -->
+{#<ul>#}
+{#    {% for dd2 in d2 %}#}
+{#      <li>#}
+{#        {% for ddd2 in dd2 %}#}
+{#          {{ forloop.parentloop.counter }}#}
+{#          {{ forloop.counter }}#}
+{#          <a href="">{{ ddd2 }}</a>#}
+{#        {% endfor %}#}
+{##}
+{#      </li>#}
+{#  {% endfor %}#}
+{#</ul>#}
+
+<!-- empty示例 -->
+{#<ul>#}
+{#   {% for foo in d3 %}#}
+{#       <li>{{ foo }}</li>#}
+{#   {% empty %}#}
+{#     <li>查询的内容啥也没有</li>#}
+{#  {% endfor %}#}
+{##}
+{#</ul>#}
+
+{#  {% if num > 10 %}#}
+{#    <a href="">大于10</a>#}
+{#  {% elif num < 10 %}#}
+{#    <a href="">小于10</a>#}
+{#  {% else %}#}
+{#    <a href="">等于10</a>#}
+{#  {% endif %}#}
+
+{#  {% if d3|length > 3 %}#}
+{#    <a href="">大于3</a>#}
+{#    {% elif d3|length < 3 %}#}
+{#     <a href="">小于3</a>#}
+{#    {% else %}#}
+{#      <a href="">等于3</a>#}
+{#  {% endif %}#}
+
+
+<h1>{{ d1.hobby.0 }}</h1>
+
+{#{% with shitai=d1.hobby.0 %}#}
+{#{% with d1.hobby.0 as shitai %}#}
+{##}
+{#  <h2>{{ shitai }}</h2>#}
+{##}
+{##}
+{#{% endwith %}#}
+
+{% for foo in d4.items %}
+  <li>{{ foo }}</li>
+{% endfor %}
+
+
+
+</body>
+</html>

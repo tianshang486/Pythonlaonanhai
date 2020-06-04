@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script>
+        // 等待整个页面中的内容全部加载完成之后,触发window.onload对应的函数里面的内容
+        // window.onload 有覆盖现象,会被后面的window.onload给重新赋值
+        // window.onload = function () {
+        //     $('.c1').click(function () {
+        //         $(this).css({'background-color':'green'});
+        //     })
+        // }
+
+        
+        $(function () {
+            $('.c1').click(function () {
+                $(this).css({'background-color':'green'});
+            })
+        });
+
+    </script>
+    <script src="xx.js"></script>
+
+
+    <style>
+        .c1{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="c1"></div>
+
+<img src="" alt="">
+
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .c1{
+      color:red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  用户名: <input type="text" id="username">
+  <span class="c1"></span>
+</div>
+<div>
+  密码: <input type="password" id="password">
+  <span class="c1"></span>
+</div>
+<button id="btn">提交</button>
+
+
+<script src="jquery.js"></script>
+<script>
+    $('#btn').click(function () {
+        var user = $('#username').val();
+        var pwd = $('#password').val();
+        if (user.length === 0){
+            $('#username').siblings('.c1').text('用户名不能为空');
+        }else {
+            $('#username').siblings('.c1').text('');
+        }
+
+        if (pwd.length === 0){
+            $('#password').siblings('.c1').text('密码不能为空');
+        }else {
+            $('#password').siblings('.c1').text('');
+        }
+
+
+
+
+
+    })
+
+</script>
+
+</body>
+</html>

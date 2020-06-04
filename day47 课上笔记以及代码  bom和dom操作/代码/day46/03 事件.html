@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: black;
+            height: 200px;
+            width: 200px;
+        }
+        #d2{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+用户名:<input type="text" id="username">
+
+<select name="" id="jishi">
+    <option value="1">太白</option>
+    <option value="2">alex</option>
+    <option value="3">沛齐</option>
+
+</select>
+
+
+
+
+<!--<div id="d1" class="c1" onclick="f1();"></div>-->
+<div id="d1" class="c1"></div>
+
+<div id="d2"></div>
+<script>
+
+    //input标签绑定onchange事件
+    var inp = document.getElementById('username');
+    inp.onchange = function () {
+        console.log(this.value);
+    };
+
+
+    // onchange事件，内容发生变化时触发的事件
+    var s = document.getElementById('jishi');
+    s.onchange = function () {
+        console.log(this.options[this.selectedIndex].innerText + '搓的舒服');
+    }
+
+     // onfocus事件,获得光标
+    // var inp = document.getElementById('username');
+    // inp.onfocus = function () {
+    //     var d = document.getElementById('d1');
+    //     d.style.backgroundColor = 'pink';
+    // };
+    // // onblur 失去光标时触发的事件
+    //
+    // inp.onblur = function () {
+    //     var d = document.getElementById('d1');
+    //     d.style.backgroundColor = 'green';
+    // };
+
+
+
+    // function f1(ths) {
+    //     var d = document.getElementById('d1');
+    //     d.style.backgroundColor = 'yellow';
+    //     ths.style.backgroundColor = 'yellow';
+    //
+    //     var d = document.getElementById('d2');
+    //     d.style.backgroundColor = 'yellow';
+    // }
+
+    // var d = document.getElementById('d1');
+    // d.onclick = function () {
+    //     this.style.backgroundColor = 'yellow';
+    //     // d.style.backgroundColor = 'yellow';
+    // }
+
+   
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button id="choose_all">全选</button>
+<button id="reverse">反选</button>
+<button id="cancel">取消</button>
+<table border="1">
+    <thead>
+      <tr>
+          <th>#</th>
+          <th>姓名</th>
+          <th>爱好</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <input type="checkbox">
+        </td>
+        <td>b哥</td>
+        <td>强人索男</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox">
+        </td>
+        <td>得港</td>
+        <td>爱绿</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox">
+        </td>
+        <td>大壮</td>
+        <td>羡慕被调教</td>
+      </tr>
+    </tbody>
+</table>
+
+<script src="jquery.js"></script>
+<script>
+  //全选
+  $('#choose_all').click(function () {
+      $(':checkbox').prop('checked',true);
+  });
+  //取消
+  $('#cancel').click(function () {
+      $(':checkbox').prop('checked',false);
+  });
+  //反选
+  $('#reverse').click(function () {
+      // var a = $(':checkbox');
+      // for (var i=0;i<a.length;i++){
+      //     var status = a.eq(i).prop('checked');
+      //     // if (status === true){
+      //     //     a.eq(i).prop('checked',false);
+      //     // }else {
+      //     //     a.eq(i).prop('checked',true);
+      //     // }
+      //     a.eq(i).prop('checked',!status);
+      //
+      // }
+
+
+
+  })
+
+
+</script>
+</body>
+</html>

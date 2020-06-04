@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+        .c2{
+            background-color: green;
+            height: 1000px;
+            width: 100px;
+        }
+        .c3{
+            background-color: blue;
+            height: 1000px;
+            width: 100px;
+        }
+        .s1{
+            position: fixed;
+            left:20px;
+            bottom: 20px;
+            height: 40px;
+            width: 80px;
+            background-color: purple;
+            line-height: 40px;
+            text-align: center;
+
+        }
+        .s1 a{
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .hide{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--<a name="top">这里是顶部</a>-->
+<!--<a>这里是顶部</a>-->
+<span>顶部位置</span>
+<div class="c1"></div>
+
+<button class="change-postion">走你</button>
+
+<div class="c2"></div>
+<div class="c3"></div>
+
+<span class="s1 hide">
+    <!--<a href="#top">返回顶部</a>-->
+    <span>返回顶部</span>
+
+</span>
+
+
+<script src="jquery.js"></script>
+<script>
+    $('.change-postion').click(function () {
+        $('.c1').offset({top:200,left:200});
+    });
+
+    $(window).scroll(function () {
+        console.log($(window).scrollTop());
+        if ($(window).scrollTop() >=200){
+            $('.s1').removeClass('hide');
+        }else {
+            $('.s1').addClass('hide');
+        }
+
+    });
+
+    $('.s1').click(function () {
+        $(window).scrollTop(0);
+    })
+
+</script>
+
+</body>
+</html>

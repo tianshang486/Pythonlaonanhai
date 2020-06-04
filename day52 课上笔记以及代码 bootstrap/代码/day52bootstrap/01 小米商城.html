@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .title{
+            background-color: #333;
+            height: 40px;
+            line-height: 40px;
+        }
+        .title .title-content a{
+            text-decoration: none;
+            color: #b0b0b0;
+            font-size: 12px;
+        }
+        .title .title-content a:hover{
+          color:#fff;
+        }
+        .title .title-content span{
+            color: #424242;
+        }
+        .title .title-content{
+            width: 90%;  /* 父类标签宽度的90% */
+            margin-left: 5%;  /* 父类标签宽度的5% */
+            height: 40px;
+            line-height: 40px;
+        }
+        .title .title-content .title-content-left{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+        .title .title-content .title-content-right{
+            float: right;
+            height: 40px;
+            line-height: 40px;
+        }
+
+
+        .content-out .content-inner{
+          margin-left: 5%;
+          width: 90%;
+          /*border: 1px solid red;*/
+        }
+
+        .content-top-left a img{
+          background-color: orangered;
+          height: 55px;
+          width: 55px;
+        }
+        .content-top-left a{
+          height: 55px;
+          width: 55px;
+          display: inline-block;
+          margin-top: 22px;
+        }
+
+        .content-top .content-top-left{
+          float: left;
+          height: 100px;
+        }
+        .content-top .content-top-center{
+          float: left;
+          margin-left: 150px;
+        }
+        .content-top .content-top-right{
+          float: right;
+        }
+        .content-inner>.content-top{
+          height: 100px;
+          line-height: 100px;
+        }
+        .content-top .content-top-center a{
+          padding: 26px 10px 38px;
+          text-decoration: none;
+          color:#333;
+        }
+        .content-top .content-top-center a:hover{
+          color:#ff6700;
+        }
+
+
+        /*.content-top .content-top-right [type=text]{*/
+          /*height: 50px;*/
+          /*width: 220px;*/
+          /*display: inline-block;*/
+          /*border:1px solid #e0e0e0;*/
+        /*}*/
+        .content-top .content-top-right [type=text]{
+          height: 50px;
+          width: 120px;
+          display: inline-block;
+          /*border:1px solid #e0e0e0;*/
+          border: 0;
+          padding: 0;
+          margin: 0;
+
+        }
+        .content-top .content-top-right .show-play{
+          width: 220px;
+          display: inline-block;
+          height: 54px;
+          line-height: 54px;
+          margin-top: 23px;
+          border: 1px solid #e0e0e0;
+        }
+        .content-top .content-top-right .show-play .tag{
+          display: inline-block;
+          height: 54px;
+          width: 100px;
+        }
+        .content-top .content-top-right .show-play .tag a{
+          font-size: 12px;
+          background: #eee;
+          color: #757575;
+          text-decoration: none;
+        }
+        .content-top .content-top-right .show-play .tag a:hover{
+          color:#fff;
+          background-color: #ff6700;
+        }
+        .content-top .content-top-right [type=submit]{
+          height: 54px;
+          width: 54px;
+          display: inline-block;
+          background-color: white;
+          border:1px solid #e0e0e0;
+          /*border-color:white;*/
+          /*text-transform: none;*/
+          /*text-shadow: none;*/
+        }
+        .content-top .content-top-right input{
+          font-size: 14px;
+        }
+
+        .content-center .content-center-left{
+          background-color: gray;
+          width: 20%;
+          height: 460px;
+          float: left;
+        }
+        .content-center .content-center-right{
+          float: right;
+          width: 80%;
+          height: 460px;
+        }
+        .content-center .content-center-right img{
+          width: 100%;
+          height: 460px;
+        }
+        .content-center .content-center-left ul{
+          padding: 0;
+          margin: 0;
+        }
+        .content-center .content-center-left ul li{
+              height: 42px;
+              line-height: 42px;
+        }
+        .content-center .content-center-left ul li a{
+          display: inline-block;
+          height: 42px;
+          width: 100%;
+          text-decoration: none;
+          color:#fff;
+          font-size:14px;
+          font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+        }
+        .content-center .content-center-left ul li a .info{
+          margin-left:30px;
+
+        }
+        .content-center .content-center-left ul li a .gt{
+          float: right;
+          margin-right: 30px;
+        }
+        .content-center .content-center-left ul li:hover{
+          background-color: #ff6700;
+        }
+        .content-center .content-center-left ul{
+          padding: 20px 0;
+        }
+       .hide{
+          display: none!important;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="title">
+    <div class="title-content">
+        <div class="title-content-left">
+            <a href="">小米商城</a> <span> | </span>
+            <a href="">MIUI</a> <span> | </span>
+            <a href="">loT</a> <span> | </span>
+            <a href="">云服务</a> <span> | </span>
+            <a href="">金融</a> <span> | </span>
+            <a href="">有品</a> <span> | </span>
+            <a href="">小爱开放平台</a> <span> | </span>
+            <a href="">企业团购</a> <span> | </span>
+            <a href="">小米商城</a> <span> | </span>
+            <a href="">小米商城</a> <span> | </span>
+            <a href="">小米商城</a> <span> | </span>
+            <a href="">小米商城</a>
+        </div>
+        <div class="title-content-right">
+            <a href="">登录</a><span> | </span>
+            <a href="">注册</a><span> | </span>
+            <a href="">消息通知</a>
+            <a href="">购物车</a>
+        </div>
+    </div>
+</div>
+
+<div class="content-out">
+
+  <div class="content-inner">
+    <div class="content-top">
+      <div class="content-top-left">
+        <a href="http://www.xiaohuar.com">
+          <img src="mi-logo.png" alt="">
+        </a>
+      </div>
+      <div class="content-top-center">
+        <a href="javascript:void(0);">小米手机</a>
+        <a href="javascript:void(0);">Redmi 红米</a>
+        <a href="javascript:void(0);">电视</a>
+        <a href="javascript:void(0);">笔记本</a>
+        <a href="javascript:void(0);">路由器</a>
+        <a href="javascript:void(0);">家电</a>
+        <a href="javascript:void(0);">智能硬件</a>
+        <a href="javascript:void(0);">特殊服务</a>
+        <a href="javascript:void(0);">上门</a>
+
+      </div>
+      <div class="content-top-right">
+
+
+        <!--<input type="text"><input type="submit">-->
+        <div class="show-play">
+          <input type="text" id="search-input"><div class="tag">
+            <a href="#">小米9</a>
+            <a href="#">小米9 SE</a>
+          </div>
+        </div><input type="submit" id="search-button">
+
+      </div>
+    </div>
+    <div class="content-center">
+      <div class="content-center-left">
+        <ul type="none">
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="info">手机 电话卡</span>
+              <span class="gt">&gt;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="content-center-right">
+        <img src="1.png" alt="">
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+  $('#search-input').focus(function () {
+      $(this).css({'height':'50px','width':'220px','display':'inline-block','border':'1px solid #e0e0e0','border-color':'#ff6700'});
+
+      $(this).parent().css({'border':'0'});
+      $('.content-top .content-top-right .show-play .tag').addClass('hide');
+      $('#search-button').css({'border-color':'#ff6700'});
+
+  })
+
+  /*height: 50px;*/
+          /*width: 220px;*/
+          /*display: inline-block;*/
+          /*border:1px solid #e0e0e0;*/
+
+</script>
+
+
+
+</body>
+</html>

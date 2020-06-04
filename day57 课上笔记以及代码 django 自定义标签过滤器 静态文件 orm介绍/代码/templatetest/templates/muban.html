@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .nav{
+      background-color: red;
+      height: 40px;
+
+    }
+    .left-menu{
+      background-color: gray;
+      color: white;
+      width: 20%;
+      height: 400px;
+      float: left;
+
+    }
+    ul{
+      margin: 0;
+    }
+    .content{
+      width: 80%;
+      float: right;
+    }
+    .clearfix{
+      content: '';
+      display: block;
+      clear:both;
+    }
+    {% block css %}
+
+    {% endblock %}
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="">22期洗脚城</a>
+  <a href="">22期spa会所</a>
+  <a href="">22期怡红院</a>
+  <a href="">22期养老院</a>
+  <input type="text"><button>搜索</button>
+</div>
+<div class="clearfix">
+  <div class="left-menu">
+    <ul>
+      <li><a href="/menu1/">菜单1</a></li>
+      <li><a href="/menu2/">菜单2</a></li>
+      <li><a href="/menu3/">菜单3</a></li>
+
+    </ul>
+
+  </div>
+  <div class="content">
+    {% block content %}
+      母版页面
+    {% endblock %}
+  </div>
+</div>
+
+{% block js %}
+
+{% endblock %}
+
+</body>
+</html>

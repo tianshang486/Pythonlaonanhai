@@ -1,0 +1,158 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+  <style>
+
+        .permission-area tr.parent {
+            background-color: #cae7fd;;
+        }
+
+        .menu-body tr.active {
+            background-color: #f1f7fd;
+            border-left: 3px solid #fdc00f;
+        }
+
+
+
+
+
+  </style>
+{% endblock %}
+{% block content %}
+
+  <div style="margin-top: 20px;">
+    <div class="col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+
+            <i class="fa fa-book"></i> 菜单管理
+          <a href="{% url 'rbac:menu_add' %}" class="btn btn-success btn-sm pull-right" style="padding: 0 4px;"><i class="fa fa-plus"></i>新建</a>
+
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" style="margin-top: 5px">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>图标</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="menu-body">
+            {% for menu in all_menus %}
+                <tr class="{% if mid == menu.pk|safe %}active{% endif %}">
+
+                    <td><a href="{% url 'rbac:menu_list' %}?mid={{ menu.pk }}">{{ menu.title }}</a></td>
+                    <td><i class="fa {{ menu.icon }}"></i></td>
+                    <td>
+                        <a href="{% url 'rbac:menu_edit' menu.pk %}"> <i class="fa fa-edit"></i> </a>
+                        <a href="{% url 'rbac:menu_del' menu.pk %}"> <i class="fa fa-trash-o"></i> </a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <i class="fa fa-cubes"></i> 权限管理
+                    <a href="" class="btn btn-primary btn-sm pull-right "
+                       style="padding: 2px 8px;margin: -3px;"> <i class="fa fa-scissors"></i> 批量操作</a>
+                    <a href="" class="btn btn-success btn-sm pull-right "
+                       style="padding: 2px 8px;margin: -3px;"> <i class="fa fa-plus"></i> 新建</a>
+        </div>
+        <div class="panel-body">
+          <table class="table table-hover" style="margin-top: 5px">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>ULR</th>
+                <th>URL别名</th>
+                <th>菜单</th>
+                <th>所属菜单</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="permission-area">
+            {% for parent_permission in permission_dict %}
+                <tr class="parent">
+                    <td><i class="fa fa-caret-down icon"></i> {{ parent_permission.title }}</td>
+                    <td>{{ parent_permission.url }}</td>
+                    <td>{{ parent_permission.url_name }}</td>
+                    <td>{{ parent_permission.menus__title }}</td>
+                    <td></td>
+                    <td>
+                        <a href=""> <i class="fa fa-edit"></i> </a>
+                        <a href=""> <i class="fa fa-trash-o"></i> </a>
+                    </td>
+                </tr>
+                {% for child_permission in parent_permission.children %}
+                  <tr>
+                    <td>{{ child_permission.title }}</td>
+                    <td>{{ child_permission.url }}</td>
+                    <td>{{ child_permission.url_name }}</td>
+                    <td></td>
+                    <td>{{ child_permission.parent__title }}</td>
+                    <td>
+                        <a href=""> <i class="fa fa-edit"></i> </a>
+                        <a href=""> <i class="fa fa-trash-o"></i> </a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}
+
+
+
+{% block js %}
+  <script>
+    $('.parent').click(function () {
+
+        // fa-caret-right"
+        $(this).find('.icon').toggleClass('fa-caret-right');
+        $(this).nextUntil('.parent').toggleClass('hidden');
+
+    })
+
+
+  </script>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

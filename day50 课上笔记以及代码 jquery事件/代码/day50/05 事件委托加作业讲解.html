@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="d1">
+    <button class="c1">爱的魔力转圈圈</button>
+
+</div>
+
+<script src="jquery.js"></script>
+<script>
+    // $('.c1').on('click',function () {
+    //     alert('得港被雪飞调教了,大壮很难受!');
+    //     var btn = document.createElement('button');
+    //     $(btn).text('爱的魔力转圈圈');
+    //     $(btn).addClass('c1');
+    //     console.log(btn);
+    //     //添加到div标签里面的后面
+    //     $('#d1').append(btn);
+    //
+    // });
+
+
+    $('#d1').on('click','button',function () {
+        // alert('得港被雪飞调教了,大壮很难受!');
+        var btn = document.createElement('button');
+        $(btn).text('爱的魔力转圈圈');
+        $(btn).addClass('c1');
+        console.log($(this));
+        //添加到div标签里面的后面
+        $('#d1').append(btn);
+
+    });
+
+
+
+
+</script>
+</body>
+</html>

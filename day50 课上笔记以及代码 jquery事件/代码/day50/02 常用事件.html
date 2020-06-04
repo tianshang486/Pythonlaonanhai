@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+        }
+        .cc{
+            background-color: green;
+        }
+
+        /*.c1:hover{*/
+            /*background-color: blue;*/
+        /*}*/
+
+        .c2{
+            background-color: deeppink;
+            width: 200px;
+            height: 200px;
+        }
+        .c3{
+            background-color: black;
+            width: 50px;
+            height: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+用户名:<input type="text" id="username">
+
+请选择城市:
+<select name="" id="city">
+    <option value="1">东莞</option>
+    <option value="2">深圳</option>
+    <option value="3">丽江</option>
+
+</select>
+
+<div class="c1"></div>
+<div class="c2">
+    <div class="c3"></div>
+</div>
+
+
+
+
+<script src="jquery.js"></script>
+<script>
+    //获取光标触发的事件
+    // $('[type="text"]').focus(function () {
+    //     $('.c1').css({'background-color':'black'});
+    // });
+    // //失去光标(焦点)触发的事件
+    // $('[type="text"]').blur(function () {
+    //     $('.c1').css({'background-color':'purple'});
+    // });
+    //
+    // //域内容发生改变时触发的事件
+    // $('select').change(function () {
+    //     $('.c1').toggleClass('cc');
+    // });
+
+    //鼠标悬浮触发的事件
+    // $('.c1').hover(
+    //     //第一步:鼠标放上去
+    //     function () {
+    //         $(this).css({'background-color':'blue'});
+    //     },
+    //     //第二步,鼠标移走
+    //     function () {
+    //         $(this).css({'background-color':'yellow'});
+    //     }
+    // )
+
+    // 鼠标悬浮  等同于hover事件
+    // $('.c1').mouseenter(function () {
+    //     $(this).css({'background-color':'blue'});
+    // });
+    //  $('.c1').mouseout(function () {
+    //     $(this).css({'background-color':'yellow'});
+    // });
+
+    // $('.c2').mouseenter(function () {
+    //     console.log('得港绿了');
+    // });
+
+    // $('.c2').mouseover(function () {
+    //     console.log('得港绿了');
+    // });
+    // mouseover 和 mouseenter的区别是：mouseover事件是如果该标签有子标签，那么移动到该标签或者移动到子标签时会连续触发，mmouseenter事件不管有没有子标签都只触发一次，表示鼠标进入这个对象
+    //键盘按下触发的事件  e\event事件对象
+    $(window).keydown(function (e) {
+        // console.log(e.keyCode); //每个键都有一个keyCode值,通过不同的值来触发不同的事件
+        if (e.keyCode === 37){
+            $('.c1').css({'background-color':'red'});
+        }else if(e.keyCode === 39){
+            $('.c1').css({'background-color':'green'});
+        }
+        else {
+            $('.c1').css({'background-color':'black'});
+        }
+    })
+    $(window).keyup(function (e) {
+        console.log(e.keyCode);
+    })
+
+
+</script>
+
+
+</body>
+</html>

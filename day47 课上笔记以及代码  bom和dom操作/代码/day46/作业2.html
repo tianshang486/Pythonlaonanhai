@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>select联动</title>
+</head>
+<body>
+<select id="province">
+  <option>请选择省:</option>
+</select>
+
+<select id="city">
+  <option>请选择市:</option>
+</select>
+
+<script>
+  data = {"河北省": ["廊坊", "邯郸"], "北京": ["朝阳区", "海淀区"], "山东": ["威海市", "烟台市"]};
+
+  var p = document.getElementById("province");
+  var c = document.getElementById("city");
+  //页面一刷新就将所有的省份都添加到select标签中
+  for (var i in data) {
+    var optionP = document.createElement("option"); //创建option标签
+    optionP.innerHTML = i; //将省份的数据添加到option标签中
+    p.appendChild(optionP);//将option标签添加到select标签中
+  }
+  //只要select中选择的值发生变化的时候，就可以触发一个onchange事件，那么我们就可以通过这个事件来完成select标签联动
+  p.onchange = function () {
+    //1.获取省的值
+    var pro = (this.options[this.selectedIndex]).innerHTML;//this.selectedIndex是当前选择的option标签的索引位置，this.options是获取所有的option标签，通过索引拿到当前选择的option标签对象，然后.innerHTML获取对象中的内容，也就是省份
+    //还可以这样获取省：var pro = this.value;
+    var citys = data[pro]; //2. 通过上面获得的省份去data里面取出该省对应的所有的市
+    // 3. 清空option
+    c.innerHTML = ""; //清空显示市的那个select标签里面的内容
+　　
+
+    //4.循环所有的市，然后添加到显示市的那个select标签中
+    for (var i=0;i<citys.length;i++) {
+      var option_city = document.createElement("option");
+      option_city.innerHTML = citys[i];
+      c.appendChild(option_city);
+    }
+  }
+</script>
+</body>
+</html>

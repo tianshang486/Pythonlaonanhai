@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            /*overflow: hidden;*/
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="c1">
+    总结一下：为什么要有浮动啊，是想做页面布局，但是浮动有副作用，父级标签塌陷，所以要想办法去掉这个副作用，使用了clear来清除浮动带来的副作用，我们当然也可以通过设置标签为inline-block来实现这种布局效果，但是把一个块级标签变成一个类似内敛标签的感觉，不好操控，容易混乱，所以一般都用浮动来进行布局。
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>添加书籍</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ book_form_obj.title.id_for_label }}">{{ book_form_obj.title.label }}</label>
+          {{ book_form_obj.title }}
+          <span style="color: red;font-size: 12px;">{{ book_form_obj.title.errors.0 }}</span>
+
+        </div>
+        <div class="form-group">
+          <label for="{{ book_form_obj.price.id_for_label }}">{{ book_form_obj.price.label }}</label>
+          {{ book_form_obj.price }}
+          <span style="color: red;font-size: 12px;">{{ book_form_obj.price.errors.0 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="{{ book_form_obj.publishDate.id_for_label }}">{{ book_form_obj.publishDate.label }}</label>
+          {{ book_form_obj.publishDate }}
+          <span style="color: red;font-size: 12px;">{{ book_form_obj.publishDate.errors.0 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="{{ book_form_obj.publishs.id_for_label }}">{{ book_form_obj.publishs.label }}</label>
+          {{ book_form_obj.publishs }}
+          <span style="color: red;font-size: 12px;">{{ book_form_obj.publishs.errors.0 }}</span>
+        </div>
+        <div class="form-group">
+          <label for="{{ book_form_obj.authors.id_for_label }}">{{ book_form_obj.authors.label }}</label>
+          {{ book_form_obj.authors }}
+          <span style="color: red;font-size: 12px;">{{ book_form_obj.authors.errors.0 }}</span>
+        </div>
+        <button class="btn btn-success pull-right">提交</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>

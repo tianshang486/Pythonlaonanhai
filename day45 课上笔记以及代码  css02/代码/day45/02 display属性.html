@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /*display: inline;  !* 将标签设置为内敛标签 *!*/
+            /*display: inline-block;  !* 将标签设置为同时具备内敛和块级标签的一些特性,比如可以设置高度宽度,但是不独占一行 *!*/
+            /*display: none;  !* 隐藏标签 ,并且不占用自己之前的空间*!*/
+
+        }
+        span{
+            border: 2px solid blue;
+
+        }
+
+        .c1{
+            width: 200px;
+            height: 200px;
+            /*display: inline-block;*/
+            /*display: block; !* 将内敛标签设置为块级标签 *!*/
+            /*display: none;*/
+            visibility: hidden; /* 隐藏标签,但是标签还占用原来的空间 */
+            /*display: none;  !* 隐藏标签 ,并且不占用自己之前的空间*!*/
+        }
+
+    </style>
+</head>
+<body>
+
+<div>
+    只要python学的好,媳妇年年在高考!
+</div>
+<span class="c1">你说的对!</span>
+<span class="c2">你说的真好!</span>
+
+</body>
+</html>

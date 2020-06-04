@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cover {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 99;
+        }
+
+        .modal {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+            z-index: 1000;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .input-box {
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="add">新增</button>
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>姓名</th>
+        <th>爱好</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>金老板</td>
+        <td>开车</td>
+        <td>
+            <button class="fire">开除</button>
+            <button class="edit">编辑</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>景女神</td>
+        <td>茶道</td>
+        <td>
+            <button class="fire">开除</button>
+            <button class="edit">编辑</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>苑昊（苑局）</td>
+        <td>不洗头、不翻车、不要脸</td>
+        <td>
+            <button class="fire">开除</button>
+            <button class="edit">编辑</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="cover hide"></div>
+<div class="modal hide">
+    <div class="input-box">
+        <div>
+            <label>姓名：
+                <input type="text" id="name">
+            </label>
+        </div>
+        <div>
+            <label>爱好：
+                <input type="text" id="hobby">
+            </label>
+        </div>
+        <button id="cancel" type="button">取消</button>
+        <button id="submit" type="button">提交</button>
+    </div>
+
+
+</div>
+<script src="jquery.js"></script>
+<script>
+    // 定义一个清空输入框并且隐藏模态框的方法
+    function hideModal() {
+        // 1. 清空input的值
+        $("#name,#hobby").val('');
+        // 2. 隐藏起来
+        $(".cover,.modal").addClass('hide');
+    }
+
+    // 定义一个显示模态框的方法
+    function showModal() {
+        // 1. 移除cover和modal的hide样式
+        $(".cover,.modal").removeClass('hide');
+    }
+
+    // 开除按钮的功能
+    $("table").on('click', '.fire', function () {
+        // 点击开除按钮要做的事儿
+        // 把当前行移除掉
+        //this  --> 触发当前点击事件的DOM对象
+        $(this).parent().parent().remove();  // 链式操作
+    });
+    // 新增按钮的功能
+    $("#add").click(function () {
+        // 点击新增按钮要做的事儿
+        showModal();
+    });
+    // 点击modal中的cancel按钮
+    $("#cancel").click(function () {
+        hideModal();
+    });
+
+    // 点击modal中的submit按钮
+    $("#submit").click(function () {
+            // 1. 获取用户输入的值
+            var name = $("#name").val();
+            var hobby = $("#hobby").val();
+        // 判断是添加操作还是编辑操作
+        var $editTr = $(this).data('xyh');
+        if ( $editTr === undefined) {
+            // 3. 创建一个tr标签，把数据塞进去
+            var trEle = document.createElement("tr");
+            $(trEle).append('<td><input type="checkbox"></td>');
+            $(trEle).append('<td>' + name + '</td>');
+            var tdTmp = document.createElement('td');
+            tdTmp.innerText = hobby;
+            $(trEle).append(tdTmp);
+            $(trEle).append('<td><button class="fire">开除</button> <button class="edit">编辑</button></td>')
+            // 4. 把上一步的tr追加到表格的tbody后面
+            $('tbody').append(trEle);
+        } else {
+            // 进入编辑模式
+            // 1. 取出用户之前编辑的那一行
+            // 2. 修改对应td的文本
+            $editTr.children().eq(1).text(name);
+            $editTr.children().eq(2).text(hobby);
+            // 3. 清空submit 按钮身上的data
+            $('#submit').removeData('xyh');
+        }
+        // 2. 隐藏模态框，清空输入框
+        hideModal();
+    });
+    // 点击编辑按钮要做的事儿
+    $('body').on('click', '.edit', function () {
+        // 1. 弹出模态框
+        showModal();
+        // 2. 把当前行的信息显示到模态框的input中
+        // 2.1 获取当前行的姓名和爱好
+        var $currentTr = $(this).parent().parent();
+        var nameValue = $currentTr.children().eq(1).text();
+        var hobbyValue = $currentTr.children().eq(2).text();
+        // 第二种方式：
+        // var name = $(this).parent().prev().prev().text();
+        // var hooby = $(this).parent().prev().text();
+        // 2.2 把上一步获取的值设置给input标签
+        $('#name').val(nameValue);
+        $('#hobby').val(hobbyValue);
+        // 3. 给模态框中的提交按钮绑定一个data
+        $('#submit').data('xyh', $currentTr);
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table border="1">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>姓名</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Egon</td>
+    <td>
+      <select>
+        <option value="1">上线</option>
+        <option value="2">下线</option>
+        <option value="3">停职</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Alex</td>
+    <td>
+      <select>
+        <option value="1">上线</option>
+        <option value="2">下线</option>
+        <option value="3">停职</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Yuan</td>
+    <td>
+      <select>
+        <option value="1">上线</option>
+        <option value="2">下线</option>
+        <option value="3">停职</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>EvaJ</td>
+    <td>
+      <select>
+        <option value="1">上线</option>
+        <option value="2">下线</option>
+        <option value="3">停职</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox"></td>
+    <td>Gold</td>
+    <td>
+      <select>
+        <option value="1">上线</option>
+        <option value="2">下线</option>
+        <option value="3">停职</option>
+      </select>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<script src="jquery.js"></script>
+<script>
+  // 按下shift 可以批量操作被选中的那些行对应的那些下拉框
+  var flag;
+  $(window).keydown(function (e) {
+      console.log(e.keyCode);
+      if (e.keyCode === 16){
+          flag = true
+      }
+  });
+  $(window).keyup(function () {
+      if (e.keyCode === 16){
+          flag = undefined;
+      }
+  });
+  $('select').change(function () {
+      var status = $(this).parent().siblings().find('[type="checkbox"]').prop('checked');
+      if (status === true && flag){
+          var selectVal = $(this).val();
+          // 找到被选中的那些标签对应的那行数据里面的select标签设置默认选中
+          $(':checked').parent().siblings().find('select').val(selectVal);
+
+      }
+  });
+
+
+
+</script>
+
+
+</body>
+</html>

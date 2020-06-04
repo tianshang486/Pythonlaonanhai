@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="sousuo" unicode="&#59009;" d="M512 384m-512 0a512 512 0 1 1 1024 0 512 512 0 1 1-1024 0ZM721.92 161.28c-10.24-10.24-25.6-10.24-35.84 0L601.6 245.76C510.72 189.44 392.96 217.6 336.64 307.2S307.2 517.12 396.8 573.44 606.72 601.6 661.76 512c46.08-74.24 37.12-168.96-21.76-231.68l81.92-81.92c8.96-10.24 10.24-26.88 0-37.12 0 1.28 0 0 0 0zM652.8 409.6c0 84.48-69.12 153.6-153.6 153.6s-153.6-69.12-153.6-153.6 69.12-153.6 153.6-153.6 153.6 69.12 153.6 153.6z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

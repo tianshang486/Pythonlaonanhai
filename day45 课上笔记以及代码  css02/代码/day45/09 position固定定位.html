@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: red;
+            height: 500px;
+            width: 200px;
+        }
+        .c2{
+            background-color: green;
+            height: 500px;
+            width: 200px;
+        }
+
+        .s1{
+            position: fixed; /*固定定位,位置是根据浏览器窗口来的*/
+            /*top:20px;*/
+            left: 20px;
+            bottom: 20px;
+            background-color: blue;
+            height: 40px;
+            width: 80px;
+            text-align: center;
+
+            line-height: 40px; /* 和标签高度一致,标签内容就垂直居中 */
+
+        }
+        .s1 a{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!--<a name="top">这里是顶部,亲爱的</a>-->  <!-- 锚点 -->
+<div id="top">这是顶部</div> <!-- 锚点 -->
+
+<div class="c1"></div>
+<div class="c2"></div>
+
+<span class="s1">
+    <a href="#top">回到顶部</a> <!-- 触发锚点 -->
+</span>
+
+</body>
+</html>

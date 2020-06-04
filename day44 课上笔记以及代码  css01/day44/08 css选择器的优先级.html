@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        /*优先级数字越大,越优先显示其效果,优先级相同的,显示后面定义的选择器对应的样式*/
+        /*id选择器优先级为100*/
+        /*#d1{*/
+            /*color:deepskyblue;*/
+        /*}*/
+        /*!*继承的优先级为0*!*/
+        /*body{*/
+            /*color:red;*/
+        /*}*/
+        /*!*类选择器的优先级是10*!*/
+        /*.c1{*/
+            /*color: blue;*/
+        /*}*/
+        /*.c2{*/
+            /*color: orange;*/
+        /*}*/
+        /*!*元素选择器优先级是1*!*/
+        /*div{*/
+            /*color: green;*/
+        /*}*/
+
+        .cc1 .cc3 {
+            color: purple!important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="c2 c1 c3 c4">
+    我是一个div标签
+    <p>
+        我是一个p标签
+    </p>
+</div>
+
+<div class="c2" id="d1">
+    我是div2号标签
+</div>
+
+<div class="cc1">
+    <p>我是cc1的p标签</p>
+    <div class="cc2">
+        <p class="cc3" style="color: red;">我是cc3的p标签</p>
+    </div>
+
+</div>
+
+
+</body>
+</html>

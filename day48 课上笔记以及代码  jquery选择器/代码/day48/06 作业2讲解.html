@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>select联动</title>
+</head>
+<body>
+
+<select id="province">
+  <option>请选择省:</option>
+
+</select>
+
+<select id="city">
+  <option>请选择市:</option>
+</select>
+
+<script>
+    var data = {"河北省": ["廊坊", "邯郸"], "北京": ["朝阳区", "海淀区"], "山东": ["威海市", "烟台市"]};
+
+    // 1 将省份的数据放到省份的下拉框里面
+    //1.1 找到省份下拉框
+    var proSelect = document.getElementById('province');
+    // 1.2 创建option标签
+
+    //1.3  将数据放到option标签中,并将option标签放到省份下拉框里面
+    for (var province in data){
+        var proOption = document.createElement('option');
+        proOption.innerText = province;
+        proSelect.appendChild(proOption);
+    }
+
+    //2 选择省份,将被选择的省份的市都放到市的那个下拉框里面
+    var citySelect = document.getElementById('city');
+    proSelect.onchange = function () {
+        citySelect.innerText = '';
+        var proText = this.options[this.selectedIndex].innerText;
+        var cityData = data[proText];
+        for (var cityindex in cityData){
+            var cityOption = document.createElement('option');
+            cityOption.innerText = cityData[cityindex];
+            citySelect.appendChild(cityOption);
+
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

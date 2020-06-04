@@ -1,0 +1,64 @@
+data = {1:{
+	'permissions__pk': 1,
+	'permissions__url': '/customer/list/',
+	'permissions__title': '客户展示',
+	'permissions__parent_id': None,
+	'permissions__menus__pk': 1,
+	'permissions__menus__weight': 80,
+	'permissions__menus__title': '客户管理',
+	'permissions__menus__icon': 'fa-grav'
+}, 2:{
+	'permissions__pk': 2,
+	'permissions__url': '/customer/add/',
+	'permissions__title': '添加客户',
+	'permissions__parent_id': 1,
+	'permissions__menus__pk': None,
+	'permissions__menus__weight': None,
+	'permissions__menus__title': None,
+	'permissions__menus__icon': None
+}, 3:{
+	'permissions__pk': 3,
+	'permissions__url': '/customer/edit/(?P<cid>\\d+)/',
+	'permissions__title': '编辑客户',
+	'permissions__parent_id': 1,
+	'permissions__menus__pk': None,
+	'permissions__menus__weight': None,
+	'permissions__menus__title': None,
+	'permissions__menus__icon': None
+}, 9:{
+	'permissions__pk': 9,
+	'permissions__url': '/nashui/list/',
+	'permissions__title': '纳税管理',
+	'permissions__parent_id': None,
+	'permissions__menus__pk': 2,
+	'permissions__menus__weight': 100,
+	'permissions__menus__title': '财务管理',
+	'permissions__menus__icon': 'fa-rmb'
+}, 5:{
+	'permissions__pk': 5,
+	'permissions__url': '/payment/list/',
+	'permissions__title': '缴费展示',
+	'permissions__parent_id': None,
+	'permissions__menus__pk': 2,
+	'permissions__menus__weight': 100,
+	'permissions__menus__title': '财务管理',
+	'permissions__menus__icon': 'fa-rmb'
+}, 6:{
+	'permissions__pk': 6,
+	'permissions__url': '/payment/add/',
+	'permissions__title': '添加缴费',
+	'permissions__parent_id': 5,
+	'permissions__menus__pk': None,
+	'permissions__menus__weight': None,
+	'permissions__menus__title': None,
+	'permissions__menus__icon': None
+}, 7:{
+	'permissions__pk': 7,
+	'permissions__url': '/payment/edit/(?P<pid>\\d+)/',
+	'permissions__title': '修改缴费',
+	'permissions__parent_id': 5,
+	'permissions__menus__pk': None,
+	'permissions__menus__weight': None,
+	'permissions__menus__title': None,
+	'permissions__menus__icon': None
+}}

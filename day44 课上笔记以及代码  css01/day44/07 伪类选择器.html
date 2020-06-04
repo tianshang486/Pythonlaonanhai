@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*a:link{*/
+            /*color:green;*/
+        /*}*/
+        /*a:visited{*/
+            /*color: yellow;*/
+        /*}*/
+        /*a:hover{*/
+            /*color: blue;*/
+        /*}*/
+        /*a:active{*/
+            /*color: purple;*/
+        /*}*/
+        /*div{*/
+            /*background-color: red;*/
+            /*height: 100px;*/
+            /*width: 100px;*/
+        /*}*/
+        /*div:hover{*/
+            /*background-color: green;*/
+        /*}*/
+        /*input:focus{*/
+            /*background-color: pink;*/
+        /*}*/
+
+        /*伪元素选择器*/
+        div:first-letter{
+            color: red;
+            font-size: 20px;
+        }
+        /*在p标签内容的前面插入一些内容*/
+        p:before{
+            content: '?';
+            color: green;
+            font-size:100px;
+        }
+        /*在p标签内容的后面插入一些内容*/
+        p:after{
+            content: '哈哈!';
+            color: pink;
+        }
+
+    </style>
+</head>
+<body>
+用户名:<input type="text">
+<!-- 阿斯蒂芬 -->
+<a href="http://www.xiaohuar.com">校花</a>
+
+<div>
+    我是div标签
+</div>
+
+<p>
+    我是一个p标签
+</p>
+
+</body>
+</html>

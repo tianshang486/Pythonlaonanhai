@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<p>{{ num }}</p>
+<p>{{ name }}</p>
+<p>{{ name_list.2 }}</p>
+<p>{{ d1.age }}</p>
+<p>{{ a.kind }}</p>
+<p>{{ a.eat }}</p>
+
+<!-- 过滤器 -->
+<!-- 获取数据长度,没参数 -->
+<p>{{ name_list|length }}</p>
+
+<!-- 默认值,有参数,如果一个变量是false或者为空，使用给定的默认值。 否则，使用变量的值。-->
+<p>{{ xx|default:'啥也没有' }}</p>
+
+<!-- 将值格式化为一个 “人类可读的” 文件尺寸 （例如 '13 KB', '4.1 MB', '102 bytes', 等等） -->
+<p>{{ movesize|filesizeformat }}</p>
+<!--  切片 -->
+<p>{{ name|slice:':3' }}</p>
+<!--  时间格式化显示 -->
+<p>{{ now|date:'Y-m-d' }}</p>
+<!--  字符截断 -->
+<p>{{ words|truncatechars:'9' }}</p>
+
+<!--  单词截断 -->
+<p>{{ words|truncatewords:'3' }}</p>
+
+<!-- 移除value中所有的与给出的变量相同的字符串 -->
+<p>{{ words|cut:'i' }}</p>
+
+<!-- 使用字符串连接列表，{{ list|join:', ' }}，就像Python的str.join(list) -->
+<p>{{ name_list|join:'+' }}</p>
+
+<!-- 将 字符串识别成标签-->
+<p>{{ tag|safe }}</p>
+
+</body>
+</html>

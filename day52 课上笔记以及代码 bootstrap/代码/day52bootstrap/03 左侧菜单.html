@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .menu{
+      background-color: cadetblue;
+      width: 200px;
+    }
+    .one{
+      background-color: yellow;
+      height: 40px;
+      line-height: 40px;
+      width: 200px;
+    }
+    .hide{
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="menu">
+  <div class="menu1 one">菜单一</div>
+  <div class="content hide">
+    <div>大壮</div>
+    <div>爱新觉罗.浩</div>
+    <div>尼古拉斯.申凯奇</div>
+  </div>
+  <div class="menu2 one" >菜单二</div>
+  <div class="content hide">
+    <div>头牌红旭</div>
+    <div>花魁雪飞</div>
+    <div>妈妈桑灭霸</div>
+  </div>
+  <div class="menu3 one">菜单三</div>
+  <div class="content hide">
+    <div>绿帽侠得港</div>
+    <div>粉红男孩相玺</div>
+    <div>chicken帅</div>
+  </div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+  $('.one').click(function () {
+      $(this).next().toggleClass('hide').siblings('.content').addClass('hide');
+  })
+
+</script>
+
+
+</body>
+</html>

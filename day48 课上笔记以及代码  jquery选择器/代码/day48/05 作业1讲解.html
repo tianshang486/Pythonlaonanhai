@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>定时器</title>
+
+</head>
+<body>
+
+<input type="text" id="timer">
+<button id="start">开始</button>
+<button id="end">结束</button>
+
+
+<script>
+    var timetag;
+    // 1 获取当前时间
+    function f1() {
+        var showTime = new Date();
+        var showLocaleTime = showTime.toLocaleString();
+        var inpEle = document.getElementById('timer');
+        inpEle.value = showLocaleTime;
+    }
+    // 2 把时间放进去
+    //     2.1 找到strat开始按钮,绑定点击事件
+    var startBtn = document.getElementById('start');
+    startBtn.onclick = function () {
+        //2.2 找到input标签,并将值放到input标签里面
+        f1();
+        if (timetag === undefined){
+            timetag = setInterval(f1,1000);
+        }
+    };
+    // 3 停止时间
+    var endBtn = document.getElementById('end');
+    endBtn.onclick = function () {
+        clearInterval(timetag);
+        timetag = undefined;
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button class="btn">屠龙宝刀,点击就送!</button>
+
+<script src="jquery.js"></script>
+<script>
+    $('.btn').click(function () {
+        // var a = $(this).clone(); //克隆标签
+        var a = $(this).clone(true);  //连带事件一起克隆
+        $(this).after(a);
+
+    })
+
+
+</script>
+</body>
+</html>

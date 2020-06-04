@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>你好，世界！</h1>
+
+<form action="" method="post" novalidate>
+  {% csrf_token %}
+{#  {{ form_obj.errors }}#}
+{#  用户名： <input type="text" name="username"> #}
+{#  密码： <input type="text" name="password"> #}
+  <div>
+    <label for="">{{ form_obj.name.label }}</label>
+    {{ form_obj.name }}
+    {{ form_obj.name.help_text }}
+{#    {{ form_obj.errors }}#}
+    <span style="color: red;font-size: 14px;">{{ form_obj.name.errors.0 }}</span>
+  </div>
+  <div>
+    <label for="">{{ form_obj.password.label }}</label>
+    {{ form_obj.password }}
+    {{ form_obj.password.errors.0 }}
+{#    {{ form_obj.errors }}#}
+  </div>
+  <div>
+    <label for="">{{ form_obj.r_password.label }}</label>
+    {{ form_obj.r_password }}
+    {{ form_obj.r_password.errors.0 }}
+{#    {{ form_obj.errors }}#}
+  </div>
+{#  <div>#}
+{#    <label for="">{{ form_obj.password.label }}</label>#}
+{#    {{ form_obj.password }}#}
+{#  </div>#}
+{#  <div>#}
+{#    <label for="">{{ form_obj.sex.label }}</label>#}
+{#    {{ form_obj.sex }}#}
+{#  </div>#}
+{#  <div>#}
+{#    <label for="">{{ form_obj.city.label }}</label>#}
+{#    {{ form_obj.city }}#}
+{#  </div>#}
+{#  <div>#}
+{#    <label for="">{{ form_obj.hobby.label }}</label>#}
+{#    {{ form_obj.hobby }}#}
+{#  </div>#}
+{#  <div>#}
+{#    <label for="">{{ form_obj.girls.label }}</label>#}
+{#    {{ form_obj.girls }}#}
+{#  </div>#}
+{#  <div>#}
+{#    <label for="">{{ form_obj.status.label }}</label>#}
+{#    {{ form_obj.status }}#}
+{#  </div>#}
+
+  <div>
+    <label for="">{{ form_obj.brithday.label }}</label>
+    {{ form_obj.brithday }}
+  </div>
+
+{#  {{ form_obj.as_p }}#}
+
+  <input type="submit">
+</form>
+
+
+</body>
+</html>

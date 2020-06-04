@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>你好，世界！</h1>
+
+<form action="/upload/" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  头像: <input type="file" name="head_pic">
+  用户名: <input type="text" name="username">
+  <input type="submit">
+</form>
+
+<br>
+
+ajax上传文件: <input type="file" id="file" multiple>
+ajax用户名: <input type="text" id="uname">
+<button id="btn">提交</button>
+
+
+<script src="{% static 'jquery.js' %}"></script>
+<script>
+  $('#btn').click(function () {
+      var formdata = new FormData();
+      formdata.append('aa',$('#uname').val());
+      formdata.append('csrfmiddlewaretoken',$('[name=csrfmiddlewaretoken]').val());
+      formdata.append('head_pic',$('#file')[0].files[0]);
+      $.ajax({
+          url:'/upload/',
+          type:'post',
+          data:formdata,
+
+          processData: false,    // 不处理数据
+          contentType: false,    // 不设置内容类型
+
+          success:function (res) {
+              console.log(res);
+          }
+
+      })
+
+  })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3672 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<title>选课系统完成情况统计 · Issue #IXSRZ · 老男孩python全栈22期/教学计划 - 码云 Gitee.com</title>
+<link href="https://assets.gitee.com/assets/favicon-e87ded4710611ed62adc859698277663.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<meta content='gitee.com/old_boy_python_stack__22/teaching_plan git https://gitee.com/old_boy_python_stack__22/teaching_plan.git' name='go-import'>
+<meta charset='utf-8'>
+<meta content='always' name='referrer'>
+<meta content='码云' property='og:site_name'>
+<meta content='Object' property='og:type'>
+<meta content='http://gitee.com/old_boy_python_stack__22/teaching_plan/issues/IXSRZ' property='og:url'>
+<meta content='https://gitee.com/logo_themecolor.png' itemprop='image' property='og:image'>
+<meta content='选课系统完成情况统计 · Issue #IXSRZ · 老男孩python全栈22期/教学计划 - 码云 Gitee.com' itemprop='name' property='og:title'>
+<meta content='码云(gitee.com)是 OSCHINA.NET 推出的代码托管平台，支持 Git 和 SVN，提供免费的私有仓库托管。目前已有超过 350 万的开发者选择码云。' property='og:description'>
+<meta content='教学计划,老男孩python全栈22期' name='Keywords'>
+<meta content='请回复序号1.看不太懂作业讲解的所有代码2.已经看懂作业讲解中的所有内容3.能在讲解内容基础上完成一小部分功能4.能在讲解内容基础上完成一半以上功能5.已经完成了全部功能' itemprop='description' name='Description'>
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="Rk6vhganRdFlNDBjH32Wu1RkIF3PoWdgak44ccmSkIw=" name="csrf-token" />
+
+<link href="https://assets.gitee.com/assets/application-3a55ecde868acf5b7c5e99d4ef2a94be.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="https://assets.gitee.com/assets/application-cfa8feacc0c3270606d24688b81530c3.js" type="text/javascript"></script>
+<script src="https://assets.gitee.com/assets/lib/jquery.timeago.zh-CN-bcd91c2c27a815fa9a395595874b592b.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+window.gon = {};gon.locale="zh-CN";gon.tour_env={"current_user":null,"controller_path":"issues","action_name":"show","original_url":"http://gitee.com/old_boy_python_stack__22/teaching_plan/issues/IXSRZ"};gon.http_clone="https://gitee.com/old_boy_python_stack__22/teaching_plan.git";gon.user_project="old_boy_python_stack__22/teaching_plan";gon.manage_branch="管理分支";gon.manage_tag="管理标签";gon.enterprise_id=0;gon.project_name="old_boy_python_stack__22/teaching_plan";
+//]]>
+</script>
+<script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js" type="text/javascript"></script>
+<script>
+  var title = document.title.replace(/( - Gitee| - 码云)$/, '')
+      imgUrl = '';
+  
+  document.addEventListener('DOMContentLoaded', function(event) {
+    var imgUrlEl = document.querySelector('.readme-box .markdown-body > img, .readme-box .markdown-body :not(a) > img');
+    imgUrl = imgUrlEl && imgUrlEl.getAttribute('src');
+  
+    if (!imgUrl) {
+      imgUrlEl = document.querySelector('meta[itemprop=image]');
+      imgUrl = imgUrlEl && imgUrlEl.getAttribute('content'); 
+      imgUrl = imgUrl || "https://gitee.com/logo_themecolor.png";
+    }
+  
+    wx.config({
+      debug: false,
+      appId: "wxff219d611a159737",
+      timestamp: "1560562927",
+      nonceStr: "2433867daa3924719ab0924803caccd7",
+      signature: "0a2ec4959aad3175ba41260943973fcb495d7d01",
+      jsApiList: [
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage'
+      ]
+    });
+  
+    wx.ready(function () {
+      wx.onMenuShareTimeline({
+        title: title, // 分享标题
+        link: "https://gitee.com/old_boy_python_stack__22/teaching_plan/issues/IXSRZ", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        imgUrl: imgUrl // 分享图标
+      });
+      wx.onMenuShareAppMessage({
+        title: title, // 分享标题
+        link: "https://gitee.com/old_boy_python_stack__22/teaching_plan/issues/IXSRZ", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+        desc: document.querySelector('meta[name=Description]').getAttribute('content'),
+        imgUrl: imgUrl // 分享图标
+      });
+    });
+    wx.error(function(res){
+      console.error('err', res)
+    });
+  })
+</script>
+
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [["$$","$$"],["\\[","\\]"]],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+    ignoreClass: "container|files",
+    processClass: "markdown-body"
+  }
+});
+</script>
+<script src="https://gitee.com/uploads/resources/MathJax-2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  var messages = {
+    'zh-CN': {
+      addResult: '增加 <b>{term}</b>',
+      count: '已选择 {count}',
+      maxSelections: '最多 {maxCount} 个选择',
+      noResults: '未找到结果',
+      serverError: '连接服务器时发生错误'
+    },
+    'zh-TW': {
+      addResult: '增加 <b>{term}</b>',
+      count: '已選擇 {count}',
+      maxSelections: '最多 {maxCount} 個選擇',
+      noResults: '未找到結果',
+      serverError: '連接服務器時發生錯誤'
+    }
+  }
+  
+  if (messages[gon.locale]) {
+    $.fn.dropdown.settings.message = messages[gon.locale]
+  }
+</script>
+
+<!--[if lt IE 10]>
+<script>
+    window.location.href = "/incompatible.html";
+</script>
+<![endif]-->
+</head>
+
+<script src="https://assets.gitee.com/assets/issues/app-0b744eb7a4a18354e6692fc2ec4f2599.js" type="text/javascript"></script>
+<body class='git-project'>
+<script>
+  $(function() {
+    GitLab.GfmAutoComplete.dataSource = "/old_boy_python_stack__22/teaching_plan/autocomplete_sources"
+    GitLab.GfmAutoComplete.Emoji.assetBase = 'https://assets.gitee.com/assets/emoji'
+    GitLab.GfmAutoComplete.setup();
+  });
+</script>
+
+<header class='common-header fixed noborder' id='git-header-nav'>
+<div class='ui container'>
+<div class='ui menu header-menu'>
+<div class='git-nav-expand-bar'>
+<i class='iconfont icon-mode-table'></i>
+</div>
+<div class='gitee-nav__sidebar'>
+<div class='gitee-nav__sidebar-container'>
+<div class='gitee-nav__sidebar-top'>
+<div class='gitee-nav__avatar-box'></div>
+<div class='gitee-nav__buttons-box'>
+<a href="/login" class="ui button small fluid orange">登录</a>
+<a href="/signup" class="ui button small fluid basic is-register">注册</a>
+</div>
+</div>
+<div class='gitee-nav__sidebar-middle'>
+<div class='gitee-nav__sidebar-list'>
+<ul>
+<li class='gitee-nav__sidebar-item'>
+<a href="/explore"><i class='iconfont icon-ic-discover'></i>
+<span class='gitee-nav__sidebar-name'>开源软件</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/gists"><i class='iconfont icon-ic-gists1'></i>
+<span class='gitee-nav__sidebar-name'>代码片段</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/enterprises"><i class='iconfont icon-ic-enterprise'></i>
+<span class='gitee-nav__sidebar-name'>企业版</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/education"><i class='iconfont icon-ic-education'></i>
+<span class='gitee-nav__sidebar-name'>高校版</span>
+</a></li>
+<li class='gitee-nav__sidebar-item split-line'></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/search"><i class='iconfont icon-ic-search'></i>
+<span class='gitee-nav__sidebar-name'>搜索</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/help"><i class='iconfont icon-help-circle'></i>
+<span class='gitee-nav__sidebar-name'>帮助中心</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/terms"><i class='iconfont icon-file'></i>
+<span class='gitee-nav__sidebar-name'>使用条款</span>
+</a></li>
+<li class='gitee-nav__sidebar-item'>
+<a href="/about_us"><i class='iconfont icon-issuepx'></i>
+<span class='gitee-nav__sidebar-name'>关于我们</span>
+</a></li>
+</ul>
+</div>
+</div>
+<div class='gitee-nav__sidebar-bottom'>
+<div class='gitee-nav__sidebar-close-button'>
+<i class='fa fa-angle-double-left'></i>
+</div>
+</div>
+</div>
+</div>
+
+<div class='item gitosc-logo'>
+<a href="/"><img class='ui inline image' height='28' src='/logo.svg?20171024' width='95'>
+<img class='ui inline black image' height='28' src='/logo-black.svg?20171024' width='95'>
+</a></div>
+<a href="/explore" class="item " title="开源软件">开源软件
+</a><a href="/enterprises" class="item " title="企业版">企业版
+<sup class='ui red label'>
+特惠
+</sup>
+</a><a href="/education" class="item " title="高校版">高校版
+</a><a href="https://blog.gitee.com/" class="item" id="gitee-blog" target="_blank" title="博客">博客
+</a><div class='center responsive-logo'>
+<a href="/"><img class='ui inline image' height='24' src='/logo.svg?20171024' width='85'>
+<img class='ui inline black image' height='24' src='/logo-black.svg?20171024' width='85'>
+</a></div>
+<div class='right menu userbar' id='git-nav-user-bar'>
+<div class='item git-nav-search-item'>
+<form accept-charset="UTF-8" action="/search" autocomplete="on" data-text-filter="搜索格式不正确" data-text-require="搜索关键字不能少于1个" id="navbar-search-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='ui mini fluid input'>
+<input id="navbar-search-input" name="q" placeholder="搜索项目、代码片段..." type="text" value="" />
+<input id="navbar-search-type" name="type" type="hidden" />
+</div>
+</form>
+
+
+</div>
+<a href="/signup" class="item git-nav-user__register-item">注册
+</a><a href="/login" class="item git-nav-user__login-item">登录
+</a><script>
+  $('.destroy-user-session').click(function() {
+    $.cookie('access_token', null, { path: '/' });
+  })
+</script>
+
+</div>
+</div>
+</div>
+</header>
+<script>
+  Gitee.initNavbar()
+  Gitee.initRepoRemoteWay()
+</script>
+
+<div class='fixed-notice-infos'>
+<div class='all-messages'>
+<div class='ui info message' id='git-bulletin'>
+<a href=https://gitee.com/oschina/gitee_best_practices?utm_source=gitee-notice target='_blank'>码云技术征文 | 分享你的码云最佳实践，赢取sony耳机、switch大奖 
+</a>
+<i class='icon remove' id='remove-bulletin'></i>
+</div>
+</div>
+<div class='ui container'>
+<div class='flash-messages' id='messages-container'></div>
+</div>
+<script>
+  (function() {
+    $(function() {
+      var $error_box, alertTip, notify_content, notify_options, template;
+  
+      template = '<div data-notify="container" class="ui {0} message" role="alert">' + '<i data-notify="dismiss" class="close icon"></i>' + '<span data-notify="message">{2}</span>' + '</div>';
+      notify_content = null;
+      notify_options = {};
+      alertTip = '';
+      $error_box = $(".flash_error.flash_error_box");
+      if (notify_options.type === 'error' && $error_box.length > 0 && !$.isEmptyObject(notify_content.message)) {
+        if (notify_content.message === 'captcha_fail') {
+          alertTip = "验证码不正确";
+        } else if (notify_content.message === 'captcha_expired') {
+          alertTip = "验证码已过期，请点击刷新";
+        } else if (notify_content.message === 'not_found_in_database') {
+          alertTip = "帐号或者密码错误";
+        } else if (notify_content.message === 'not_found_and_show_captcha') {
+          alertTip = "帐号或者密码错误";
+        } else {
+          alertTip = notify_content.message;
+        }
+        return $error_box.html(alertTip).show();
+      } else if (notify_content) {
+        notify_options.delay = 3000;
+        notify_options.template = template;
+        notify_options.offset = {
+          x: 10,
+          y: 30
+        };
+        notify_options.element = '#messages-container';
+        return $.notify(notify_content, notify_options);
+      }
+    });
+  
+  }).call(this);
+</script>
+
+</div>
+<script>
+  (function() {
+    $(function() {
+      var setCookie;
+  
+      setCookie = function(name, value) {
+        $.cookie(name, value, {
+          path: '/',
+          expires: 365
+        });
+      };
+      $('#remove-bulletin').on('click', function() {
+        setCookie('remove_bulletin', "gitee-maintain-1560331809");
+        $('#git-bulletin').hide();
+      });
+      $('#remove-member-bulletin').on('click', function() {
+        setCookie('remove_member_bulletin', "gitee_member_bulletin");
+        $(this).parent().hide();
+      });
+      return $('#remove-gift-bulletin').on('click', function() {
+        setCookie('remove_gift_bulletin', "gitee-gift-bulletin");
+        $(this).parent().hide();
+      });
+    });
+  
+  }).call(this);
+</script>
+
+<!--[if lt IE 10]>
+<script>
+  window.location.href = "/incompatible.html"
+</script>
+<![endif]-->
+
+<div class='site-content'>
+<div class='git-project-header'>
+<div class='fixed-notice-infos'>
+<div class='ui info icon floating message green' id='fetch-ok' style='display: none'>
+<div class='content'>
+<div class='header status-title'>
+<i class='info icon status-icon'></i>
+代码拉取完成，页面将自动刷新
+</div>
+</div>
+</div>
+<div class='ui info icon floating message error' id='fetch-error' style='display: none'>
+<div class='content'>
+<div class='header status-title'>
+<i class='info icon status-icon'></i>
+<span class='error_msg'></span>
+</div>
+</div>
+</div>
+</div>
+<div class='ui container'>
+
+<div class='git-project-header-details'>
+<div class='git-project-header-container'>
+<div class='git-project-header-actions'>
+<div class='ui tiny modal project-donate-modal' id='project-donate-modal'>
+<i class='iconfont icon-close close'></i>
+<div class='header'>捐赠</div>
+<div class='content'>
+该仓库未开启捐赠功能，可发送私信通知作者开启
+</div>
+<div class='actions'>
+<a class='ui blank button cancel'>取消</a>
+<a class='ui orange ok button' href='/notifications/messages/4920544'>发送私信</a>
+</div>
+</div>
+<div class='ui small modal wepay-qrcode'>
+<i class='iconfont icon-close close'></i>
+<div class='header'>
+扫描微信二维码支付
+<span class='wepay-cash'></span>
+</div>
+<div class='content weqcode-center'>
+<img id='wepay-qrcode' src=''>
+</div>
+<div class='actions'>
+<div class='ui cancel blank button'>取消</div>
+<div class='ui ok orange button'>
+支付完成
+</div>
+</div>
+</div>
+<div class='ui mini modal' id='confirm-alipay-modal'>
+<div class='header'>支付提示</div>
+<div class='content'>
+将跳转至支付宝完成支付
+</div>
+<div class='actions'>
+<div class='ui approve orange button'>
+确定
+</div>
+<div class='ui blank cancel button'>
+取消
+</div>
+</div>
+</div>
+
+<span class='ui basic buttons watch-container'>
+<a href="/login" class="ui button watch" title="登录以Watch"><i class='iconfont icon-watch'></i>
+Watch
+</a><a href="/old_boy_python_stack__22/teaching_plan/watchers" class="ui button action-social-count" title="6">6
+</a></span>
+<span class='ui basic buttons star-container'>
+<a href="/login" class="ui button star" title="你必须登录后才可以star一个仓库"><i class='iconfont icon-star'></i>
+Star
+</a><a href="/old_boy_python_stack__22/teaching_plan/stargazers" class="ui button action-social-count" title="7">7
+</a></span>
+<span class='ui basic buttons fork-container' data-content='无权 Fork 此仓库'>
+<a href="/login" class="ui button fork "><i class='iconfont icon-fork'></i>
+Fork
+</a><a href="/old_boy_python_stack__22/teaching_plan/members" class="ui button action-social-count" title="1">1
+</a></span>
+</div>
+<h2 class='git-project-title'>
+<i class="project-icon iconfont icon-project-public" title="这是一个公开仓库"></i> <a href="/old_boy_python_stack__22" class="author" title="老男孩python全栈22期">老男孩python全栈22期</a> / <a href="/old_boy_python_stack__22/teaching_plan" class="repository" style="padding-bottom: 0px" target="" title="教学计划">教学计划</a>
+
+<input id="project_title" name="project_title" type="hidden" value="老男孩python全栈22期/教学计划" />
+</h2>
+</div>
+</div>
+</div>
+<div class='row' id='import-result-message' style='padding-top: 0px; display: none'>
+<div class='sixteen wide column'>
+<div class='ui icon yellow message status-color'>
+<i class='info icon status-icon' style='width:60px;padding-right:12px;'></i>
+<i class='close icon'></i>
+<div class='header status-title'>
+同步状态
+</div>
+<span class='status-message'></span>
+</div>
+</div>
+</div>
+<div class='ui small modal' id='modal-fork-project'>
+<i class='icon-close iconfont close'></i>
+<div class='header'>
+Fork 仓库
+</div>
+<div class='content'>
+<div class='fork-info-content'>
+<div class='ui segment fork_project_loader'>
+<div class='ui active inverted dimmer'>
+<div class='ui text loader'>加载中</div>
+</div>
+</div>
+</div>
+</div>
+<div class='actions fork-action hide'>
+<a class='cancel'>&emsp;取消&emsp;</a>
+<div class='ui large button orange ok'>&emsp;确认&emsp;</div>
+</div>
+</div>
+<script>
+  (function() {
+    $('.fork-container').popup({
+      inline: true,
+      hoverable: true,
+      position: 'bottom left'
+    });
+  
+  }).call(this);
+</script>
+<script>
+  (function() {
+    $('#modal-fork-project').modal({
+      transition: 'fade'
+    });
+  
+    $('.checkbox.sync-wiki').checkbox();
+  
+  }).call(this);
+</script>
+<style>
+  i.loading{-webkit-animation:icon-loading 1.2s linear infinite;animation:icon-loading 1.2s linear infinite}.qrcode_cs{float:left}.check-sync-wiki{float:left;height:28px;line-height:28px}.check-sync-wiki .sync-wiki-warn{color:#e28560}
+</style>
+<script>
+  $('.metrics-radar').dropdown({ action: 'nothing' });
+</script>
+
+<div class='git-project-nav'>
+<div class='ui container'>
+<div class='ui secondary pointing menu'>
+<a href="/old_boy_python_stack__22/teaching_plan" class="item "><i class='iconfont icon-code'></i>
+代码
+</a><a href="/old_boy_python_stack__22/teaching_plan/issues" class="item active"><i class='iconfont icon-issue'></i>
+Issues
+<span class='ui mini circular label'>
+26
+</span>
+</a><a href="/old_boy_python_stack__22/teaching_plan/pulls" class="item "><i class='iconfont icon-pull-request'></i>
+Pull Requests
+<span class='ui mini circular label'>
+0
+</span>
+</a><a href="/old_boy_python_stack__22/teaching_plan/attach_files" class="item "><i class='iconfont icon-annex'></i>
+附件
+<span class='ui mini circular label'>0</span>
+</a><a href="/old_boy_python_stack__22/teaching_plan/wikis" class="item "><i class='iconfont icon-wiki'></i>
+Wiki
+<span class='ui mini circular label'>
+0
+</span>
+</a><a href="/old_boy_python_stack__22/teaching_plan/graph/master" class="item  "><i class='iconfont icon-statistics'></i>
+统计
+</a><div class='item project-devops-item'>
+<div class='ui pointing top right dropdown project-devops-dropdown'>
+<div class='text'>
+<i class='iconfont icon-devops'></i>
+DevOps
+</div>
+<i class='dropdown icon'></i>
+<div class='menu' style='display:none'>
+<a href="https://gitee.com/help/articles/4193" class="item" target="_blank"><img alt="Jenkins_for_gitee" src="https://assets.gitee.com/assets/jenkins_for_gitee-a079e18b0276e2d1230294a470364e7b.png" />
+<div class='item-title'>
+Jenkins for Gitee
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/paas/code_pipeline" class="item"><img alt="Code_pipeline" src="https://assets.gitee.com/assets/code_pipeline-502dbffc863fcc0b6867628c9e8e163e.svg" />
+<div class='item-title'>
+阿里云 CodePipeline
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/paas/huaweicloud_swr" class="item"><img alt="Huaweirqy" src="https://assets.gitee.com/assets/huaweirqy-c24d1adc35c0ecb2bc1e39f6e033835c.png" />
+<div class='item-title'>
+华为容器云
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/paas/huaweicloud_cse" class="item"><img alt="Hauweiwfw" src="https://assets.gitee.com/assets/hauweiwfw-9edbcf60ca0a5d0de81d2fc804efa9ac.png" />
+<div class='item-title'>
+华为微服务平台
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/paas/tencent_hub" class="item"><img alt="Tencent_hub" src="https://assets.gitee.com/assets/tencent_hub-e263083dfb38e2149d8a9eca5347f4d5.png" />
+<div class='item-title'>
+Tencent Hub
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/paas/select_platform" class="item"><img alt="Mopaas_mini" src="https://assets.gitee.com/assets/mopaas_mini-72f0d5aeae31630ae89f624dfb0c23ca.png" />
+<div class='item-title'>
+MoPaaS V3
+</div>
+</a></div>
+</div>
+</div>
+<div class='item'>
+<div class='ui pointing top right dropdown git-project-service'>
+<div class='text'>
+<i class='iconfont icon-service'></i>
+服务
+</div>
+<i class='dropdown icon'></i>
+<div class='menu' style='display:none'>
+<a href="/old_boy_python_stack__22/teaching_plan/pages" class="item"><img alt="Gitee" src="https://assets.gitee.com/assets/gitee-d6fb391be28450a587df71dda0325f60.png" />
+<div class='item-title'>
+Gitee Pages
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/javadoc" class="item"><img alt="Maven" src="https://assets.gitee.com/assets/maven-aea8b4f12e957c8c67de9c6fc83d27e6.png" />
+<div class='item-title'>
+JavaDoc
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/phpdoc" class="item"><img alt="Phpdoc" src="https://assets.gitee.com/assets/phpdoc-301b1db815d856e5e3de263f04f69e03.png" />
+<div class='item-title'>
+PHPDoc
+</div>
+</a><a href="/old_boy_python_stack__22/teaching_plan/quality_analyses?platform=sonar_qube" class="item"><img alt="Sonar_mini" src="https://assets.gitee.com/assets/sonar_mini-6270e37950512a0bf0a05ac5b9b11243.png" />
+<div class='item-title'>
+质量分析
+</div>
+</a><button class='ui orange basic button quit-button' id='quiting-button'>
+我知道了，不再自动展开
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  $('.git-project-nav .ui.dropdown').dropdown({ action: 'nothing' });
+</script>
+<style>
+  .git-project-nav i.checkmark.icon {
+    color: green;
+  }
+  #quiting-button {
+    display: none;
+  }
+</style>
+<script>
+  isSignIn = false
+  isClickGuide = false
+  $('#git-versions.dropdown').dropdown();
+  $.ajax({
+    url:"/old_boy_python_stack__22/teaching_plan/access/add_access_log",
+    type:"GET"
+  });
+  $('#quiting-button').on('click',function() {
+    $('.git-project-service').click();
+    if (isSignIn) {
+      $.post("/projects/set_service_guide")
+    }
+    $.cookie("Serve_State", true, { expires: 3650, path: '/'})
+    $('#quiting-button').hide();
+  });
+  if (!(isClickGuide || $.cookie("Serve_State") == 'true')) {
+    $('.git-project-service').click()
+    $('#quiting-button').show()
+  }
+</script>
+
+</div>
+<link href="https://assets.gitee.com/assets/editor-c46164d55f436fee59f59afe793ae1ec.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="https://assets.gitee.com/assets/editor-3d7fb12cb30fa952062077500f2e8976.js" type="text/javascript"></script>
+
+<script src="https://assets.gitee.com/assets/dropzone-1f2565fa75fbbf578d6682fec736f903.js" type="text/javascript"></script>
+<link href="https://assets.gitee.com/assets/dropzone-7cf5c6ad71dd8591707ea2165968733b.css" media="screen" rel="stylesheet" type="text/css" />
+<div class='git-issue ui container' id='git-issue'>
+<div class='ui error message' id='issue-form-errors' style='display: none'>
+<div class='header'>
+更新失败，请稍后重试！
+</div>
+<ul class='list'></ul>
+</div>
+<div class='git-issue-header'>
+<h2 class='ui header'>
+<span id='git-issue-title'>
+选课系统完成情况统计
+</span>
+</h2>
+</div>
+
+<div class='git-issue-meta'>
+<button class='ui label' data-text-fail='复制失败' data-text-success='复制成功' id='issue-number-button' title='点击复制任务链接' type='button'>
+#IXSRZ
+</button>
+<div class='ui label issue-state' id='issue-state-label' style='background-color: #fe7300'>
+<i class='iconfont icon-issue'></i>
+待办的
+</div>
+
+<a href="/Eva-J" class="author avatar" name="Eva_J" style="width: inherit; margin-right: 4px; margin-top: -1px" username="Eva-J">Eva_J</a>
+
+&nbsp;创建于
+<span class='timeago' title='2019-06-11 21:05:55 +0800'></span>
+</div>
+
+<div class='ui divider'></div>
+<div class='git-issue-body'>
+<div class='ui grid'>
+<div class='eleven wide column'>
+<div class='git-issue-content'>
+<div class='git-issue-description markdown-body' type='Issue' typeId='1576943' username='Eva-J'>
+<p>请回复序号<br>&#x000A;1.看不太懂作业讲解的所有代码<br>&#x000A;2.已经看懂作业讲解中的所有内容<br>&#x000A;3.能在讲解内容基础上完成一小部分功能<br>&#x000A;4.能在讲解内容基础上完成一半以上功能<br>&#x000A;5.已经完成了全部功能</p></div>
+<div class='git-issue-description-form' id='git-issue-description-form'>
+<input class='default-template' type='hidden' value='0'>
+<div class='comment-form js-comment-form rnd_64600' id='git-comment-form'>
+<div class='tab-content tab-border'>
+<div class='tab-pane active write-content'>
+<textarea cols="40" id="hidden-contentissues64600" name="issue[description]" rows="20" style="display:none">
+请回复序号&#x000A;1.看不太懂作业讲解的所有代码&#x000A;2.已经看懂作业讲解中的所有内容&#x000A;3.能在讲解内容基础上完成一小部分功能&#x000A;4.能在讲解内容基础上完成一半以上功能&#x000A;5.已经完成了全部功能</textarea>
+<textarea id='editorissues64600' style='color:#000' tabindex=''></textarea>
+</div>
+</div>
+</div>
+<style>
+  .tab-border.tab-content{
+    border: 1px solid transparent;
+    min-height: 140px;
+    padding:0;
+  }
+  .tab-border .tab-pane textarea{
+    border-radius: 0px;
+    border: 0px;
+  }
+  #git-comment-form .ui.tabular.menu .active.item{
+    border: none;
+    box-shadow: none;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  #git-comment-form .md-editor .md-upload,
+  #git-comment-form .md-editor > .md-emoji {
+    z-index: 11;
+  }
+  #git-comment-form .ui.tabular.menu .item{
+    border: none;
+    box-shadow: none;
+    margin-bottom: 5px;
+  }
+  .md-editor.md-fullscreen-mode .md-header {
+    position: absolute !important;
+    width: 100% !important;
+    top: 0 !important;
+  }
+  .md-input{
+    height:180px;
+  }
+  .md-preview {
+    padding:12px;
+    color:#000;
+  }
+</style>
+<script>
+  (function () {
+    $(document).on('keydown', ".md-input#editorissues64600", function(e) {
+      if(e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
+        $(this.form).submit();
+      }
+    });
+  
+    var $editor = $("#editorissues64600");
+    var delayUpdate = null
+  
+    $editor.mdeditor({
+      markedOptions: {
+        breaks: true
+      }
+    });
+    var form_div = $(".rnd_64600").parent().parent().parent();
+    form_div.find('.md-input').on("keyup", function() {
+      var $box = $(this).parents().eq(4);
+      var $btnCommit = $box.find('.js-commit-button');
+      var $btnComment = $box.find('.js-comment-button');
+      if ($.trim($(this).val()).length == 0) {
+        $btnComment.addClass('disabled').prop('disabled', true);
+        $btnCommit.addClass('disabled').prop('disabled', true);
+      } else {
+        $btnComment.removeClass('disabled').prop('disabled', false);
+        $btnCommit.removeClass('disabled').prop('disabled', false);
+      }
+    });
+  
+    $(function() {
+      var $loader = $editor.parents().eq(3).find('.small.loader');
+      $editor.val($("#hidden-contentissues64600").val());
+      form_div.find('.js-comment-button').prop('disabled', true).addClass('disabled');
+      form_div.find('.js-commit-button').prop('disabled', true).addClass('disabled');
+  
+    });
+  
+    $('form').submit(function(e) {
+      var $this = $(this);
+      var $target = $(e.target);
+      var formFor = $this.data('for');
+  
+      if ($target.attr('id') == 'navbar-search-form') {
+        return true;
+      }
+      if ($target.hasClass('project-refs-form')) {
+        return true;
+      }
+      if ($target.hasClass('edit_pull_request')) {
+        var o = $('#loadding-state').clone();
+        o.show();
+        o.attr('id', 'loadding-l');
+        $('#git-comment-divider').before(o);
+        return true;
+      }
+      $("#hidden-contentissues64600").val($editor.val());
+      // Issue、PR 和 Release 的表单不在此处做处理
+      if (['issue', 'pull request', 'release', 'milestone'].indexOf(formFor) >= 0) {
+        return true;
+      }
+      if ($.trim($this.find(".md-input").val()).length == 0) {
+        $("#hidden-contentissues64600").val('');
+        Flash.show("内容不能为空");
+        return false;
+      }
+      var loading = $this.parent().parent().prev().prev().find("#loadding-state");
+      loading.addClass("active").removeClass("disabled");
+  
+      if (!$this.parent().hasClass('new_note')) {
+        $this.find('.md-input').prop('disabled', true);
+      }
+  
+      var $btnComment = $this.find('.js-comment-button');
+      $btnComment.prop('disabled', true).addClass('disabled');
+      $this.find('.js-commit-button').prop('disabled', true).addClass('disabled');
+      switch ($btnComment.val()) {
+        case '评论':
+        case 'Comment':
+          var count = $.trim($('#total_count').text());
+          $('#total_count').text(parseInt(count) + 1);
+          break;
+        case '更新':
+        case 'Update':
+          if ($this.find('.md-input').val().length == 0) {
+            Flash.show('内容不能为空');
+          }
+        default: break;
+      }
+    });
+  })();
+</script>
+
+</div>
+</div>
+
+<div class='others'>
+<div class='git-issue-participates'>
+<a href="/a522428989" title="赵嘉伟"><img avatar="赵嘉伟" class="ui avatar mini image" /></a>
+<a href="/hejiabao" title="何家宝"><img avatar="何家宝" class="ui avatar mini image" /></a>
+<a href="/li_shuai1" title="李帅"><img alt="4978682_li_shuai1" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/82/4978682_li_shuai1.png!avatar30?1557231990" /></a>
+<a href="/mabaoxing" title="马保兴"><img avatar="马保兴" class="ui avatar mini image" /></a>
+<a href="/wuqiong1969" title="吴琼"><img avatar="吴琼" class="ui avatar mini image" /></a>
+<a href="/yuanjinyue" title="袁金钺"><img avatar="袁金钺" class="ui avatar mini image" /></a>
+<a href="/ywy0326" title="于文洋"><img alt="4904425_ywy0326" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/25/4904425_ywy0326.png!avatar30?1553849013" /></a>
+<a href="/changyuhong" title="常玉宏"><img avatar="常玉宏" class="ui avatar mini image" /></a>
+<a href="/niehongxu" title="聂红旭"><img avatar="聂红旭" class="ui avatar mini image" /></a>
+<a href="/wang_xing_hao" title="王兴豪"><img avatar="王兴豪" class="ui avatar mini image" /></a>
+<a href="/wenxin1120" title="肖文鑫"><img avatar="肖文鑫" class="ui avatar mini image" /></a>
+<a href="/luo_xin_yu" title="罗新宇"><img alt="4978676_luo_xin_yu" class="ui avatar mini image" src="https://gitee.com/uploads/76/4978676_luo_xin_yu.png?1557105064" /></a>
+<a href="/duyu789" title="杜宇"><img avatar="杜宇" class="ui avatar mini image" /></a>
+<a href="/poochin" title="蔡世楠"><img avatar="蔡世楠" class="ui avatar mini image" /></a>
+<a href="/luqingying" title="路庆莹"><img avatar="路庆莹" class="ui avatar mini image" /></a>
+<a href="/chengdehao" title="程德浩"><img avatar="程德浩" class="ui avatar mini image" /></a>
+<a href="/s1046765710" title="七情"><img avatar="七情" class="ui avatar mini image" /></a>
+<a href="/mini_python" title="程根"><img avatar="程根" class="ui avatar mini image" /></a>
+<a href="/fengerwuyou" title="苏守丽"><img avatar="苏守丽" class="ui avatar mini image" /></a>
+<a href="/z274714564" title="曾凡星"><img avatar="曾凡星" class="ui avatar mini image" /></a>
+<span class='omission-count'>
+以及其他人，
+共36人参与
+</span>
+
+</div>
+<div class='ui relaxed list operate-logs hidden'>
+<a class='btn-logs-detail'>
+<i class='angle double down icon'></i>
+展开详细操作日志
+</a>
+<a class='btn-hide-logs-detail'>
+<i class='angle double up icon'></i>
+收起操作日志
+</a>
+</div>
+
+<div class='divider'></div>
+<h3 class='issue-comments-header'>
+评论 (<span class="count">35</span>)
+</h3>
+<div id='git-issue-comments'>
+<div class='ui comments' id='notes-list'>
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884578' id='note_1884578' line_code=''>
+<a href="/a522428989" class="avatar" name="赵嘉伟" username="a522428989"><img avatar="赵嘉伟" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884578" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/a522428989" class="author">/a522428989</a>
+<span class='timeago' title='2019-06-11 21:10:05 +0800'>
+2019-06-11 21:10
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884578' username='a522428989'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884581' id='note_1884581' line_code=''>
+<a href="/hejiabao" class="avatar" name="何家宝" username="hejiabao"><img avatar="何家宝" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884581" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/hejiabao" class="author">/hejiabao</a>
+<span class='timeago' title='2019-06-11 21:11:31 +0800'>
+2019-06-11 21:11
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884581' username='hejiabao'>
+<p>4.1</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884582' id='note_1884582' line_code=''>
+<a href="/li_shuai1" class="avatar" name="李帅" username="li_shuai1"><img alt="4978682_li_shuai1" class="ui avatar image" src="https://avatar.gitee.com/uploads/82/4978682_li_shuai1.png!avatar60?1557231990" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884582" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/li_shuai1" class="author">/li_shuai1</a>
+<span class='timeago' title='2019-06-11 21:11:40 +0800'>
+2019-06-11 21:11
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884582' username='li_shuai1'>
+<p>4.11</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884585' id='note_1884585' line_code=''>
+<a href="/mabaoxing" class="avatar" name="马保兴" username="mabaoxing"><img avatar="马保兴" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884585" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/mabaoxing" class="author">/mabaoxing</a>
+<span class='timeago' title='2019-06-11 21:16:57 +0800'>
+2019-06-11 21:16
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884585' username='mabaoxing'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884588' id='note_1884588' line_code=''>
+<a href="/wuqiong1969" class="avatar" name="吴琼" username="wuqiong1969"><img avatar="吴琼" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884588" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/wuqiong1969" class="author">/wuqiong1969</a>
+<span class='timeago' title='2019-06-11 21:18:35 +0800'>
+2019-06-11 21:18
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884588' username='wuqiong1969'>
+<p>功能完成 管理员和学员存的都是对象</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884592' id='note_1884592' line_code=''>
+<a href="/yuanjinyue" class="avatar" name="袁金钺" username="yuanjinyue"><img avatar="袁金钺" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884592" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/yuanjinyue" class="author">/yuanjinyue</a>
+<span class='timeago' title='2019-06-11 21:21:30 +0800'>
+2019-06-11 21:21
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884592' username='yuanjinyue'>
+<p>4.111</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884594' id='note_1884594' line_code=''>
+<a href="/ywy0326" class="avatar" name="于文洋" username="ywy0326"><img alt="4904425_ywy0326" class="ui avatar image" src="https://avatar.gitee.com/uploads/25/4904425_ywy0326.png!avatar60?1553849013" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884594" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/ywy0326" class="author">/ywy0326</a>
+<span class='timeago' title='2019-06-11 21:23:06 +0800'>
+2019-06-11 21:23
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884594' username='ywy0326'>
+<p>41</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884600' id='note_1884600' line_code=''>
+<a href="/changyuhong" class="avatar" name="常玉宏" username="changyuhong"><img avatar="常玉宏" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884600" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/changyuhong" class="author">/changyuhong</a>
+<span class='timeago' title='2019-06-11 21:28:56 +0800'>
+2019-06-11 21:28
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884600' username='changyuhong'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884605' id='note_1884605' line_code=''>
+<a href="/niehongxu" class="avatar" name="聂红旭" username="niehongxu"><img avatar="聂红旭" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884605" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/niehongxu" class="author">/niehongxu</a>
+<span class='timeago' title='2019-06-11 21:31:31 +0800'>
+2019-06-11 21:31
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884605' username='niehongxu'>
+<p>5<br>&#x000A;功能都能实现，但是还有不少if else 没修改</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884610' id='note_1884610' line_code=''>
+<a href="/wang_xing_hao" class="avatar" name="王兴豪" username="wang_xing_hao"><img avatar="王兴豪" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884610" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/wang_xing_hao" class="author">/wang_xing_hao</a>
+<span class='timeago' title='2019-06-11 21:33:16 +0800'>
+2019-06-11 21:33
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884610' username='wang_xing_hao'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884614' id='note_1884614' line_code=''>
+<a href="/wenxin1120" class="avatar" name="肖文鑫" username="wenxin1120"><img avatar="肖文鑫" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884614" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/wenxin1120" class="author">/wenxin1120</a>
+<span class='timeago' title='2019-06-11 21:35:50 +0800'>
+2019-06-11 21:35
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884614' username='wenxin1120'>
+<p>5<br>&#x000A;功能基本实现,代码有点low</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884636' id='note_1884636' line_code=''>
+<a href="/luo_xin_yu" class="avatar" name="罗新宇" username="luo_xin_yu"><img alt="4978676_luo_xin_yu" class="ui avatar image" src="https://gitee.com/uploads/76/4978676_luo_xin_yu.png?1557105064" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884636" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/luo_xin_yu" class="author">/luo_xin_yu</a>
+<span class='timeago' title='2019-06-11 21:55:05 +0800'>
+2019-06-11 21:55
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884636' username='luo_xin_yu'>
+<p>4.1</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884637' id='note_1884637' line_code=''>
+<a href="/duyu789" class="avatar" name="杜宇" username="duyu789"><img avatar="杜宇" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884637" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/duyu789" class="author">/duyu789</a>
+<span class='timeago' title='2019-06-11 21:55:24 +0800'>
+2019-06-11 21:55
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884637' username='duyu789'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884642' id='note_1884642' line_code=''>
+<a href="/poochin" class="avatar" name="蔡世楠" username="poochin"><img avatar="蔡世楠" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884642" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/poochin" class="author">/poochin</a>
+<span class='timeago' title='2019-06-11 22:02:48 +0800'>
+2019-06-11 22:02
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884642' username='poochin'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884648' id='note_1884648' line_code=''>
+<a href="/luqingying" class="avatar" name="路庆莹" username="luqingying"><img avatar="路庆莹" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884648" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/luqingying" class="author">/luqingying</a>
+<span class='timeago' title='2019-06-11 22:07:50 +0800'>
+2019-06-11 22:07
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884648' username='luqingying'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884651' id='note_1884651' line_code=''>
+<a href="/chengdehao" class="avatar" name="程德浩" username="chengdehao"><img avatar="程德浩" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884651" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/chengdehao" class="author">/chengdehao</a>
+<span class='timeago' title='2019-06-11 22:09:28 +0800'>
+2019-06-11 22:09
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884651' username='chengdehao'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884661' id='note_1884661' line_code=''>
+<a href="/s1046765710" class="avatar" name="七情" username="s1046765710"><img avatar="七情" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884661" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/s1046765710" class="author">/s1046765710</a>
+<span class='timeago' title='2019-06-11 22:13:23 +0800'>
+2019-06-11 22:13
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884661' username='s1046765710'>
+<p>1<br>&#x000A;???</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884666' id='note_1884666' line_code=''>
+<a href="/mini_python" class="avatar" name="程根" username="mini_python"><img avatar="程根" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884666" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/mini_python" class="author">/mini_python</a>
+<span class='timeago' title='2019-06-11 22:16:57 +0800'>
+2019-06-11 22:16
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884666' username='mini_python'>
+<p>5<br>&#x000A;完成所有功能但感觉结构不好</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884668' id='note_1884668' line_code=''>
+<a href="/fengerwuyou" class="avatar" name="苏守丽" username="fengerwuyou"><img avatar="苏守丽" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884668" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/fengerwuyou" class="author">/fengerwuyou</a>
+<span class='timeago' title='2019-06-11 22:17:15 +0800'>
+2019-06-11 22:17
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884668' username='fengerwuyou'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884678' id='note_1884678' line_code=''>
+<a href="/z274714564" class="avatar" name="曾凡星" username="z274714564"><img avatar="曾凡星" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884678" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/z274714564" class="author">/z274714564</a>
+<span class='timeago' title='2019-06-11 22:25:09 +0800'>
+2019-06-11 22:25
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884678' username='z274714564'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884682' id='note_1884682' line_code=''>
+<a href="/cuixuefei" class="avatar" name="崔雪飞" username="cuixuefei"><img avatar="崔雪飞" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884682" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/cuixuefei" class="author">/cuixuefei</a>
+<span class='timeago' title='2019-06-11 22:31:56 +0800'>
+2019-06-11 22:31
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884682' username='cuixuefei'>
+<p>3\1</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884699' id='note_1884699' line_code=''>
+<a href="/gaogaojie" class="avatar" name="高杰" username="gaogaojie"><img avatar="高杰" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884699" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/gaogaojie" class="author">/gaogaojie</a>
+<span class='timeago' title='2019-06-11 22:46:17 +0800'>
+2019-06-11 22:46
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884699' username='gaogaojie'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884702' id='note_1884702' line_code=''>
+<a href="/luyi0105" class="avatar" name="叶又彪" username="luyi0105"><img avatar="叶又彪" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884702" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/luyi0105" class="author">/luyi0105</a>
+<span class='timeago' title='2019-06-11 22:47:29 +0800'>
+2019-06-11 22:47
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884702' username='luyi0105'>
+<p>5<br>&#x000A;代码特别low</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884708' id='note_1884708' line_code=''>
+<a href="/matt-pei" class="avatar" name="裴贺" username="matt-pei"><img alt="4978698_matt-pei" class="ui avatar image" src="https://gitee.com/uploads/98/4978698_matt-pei.png?1556438433" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884708" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/matt-pei" class="author">/matt-pei</a>
+<span class='timeago' title='2019-06-11 22:50:39 +0800'>
+2019-06-11 22:50
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884708' username='matt-pei'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884718' id='note_1884718' line_code=''>
+<a href="/youxiudexiaohuozi" class="avatar" name="李淑旗" username="youxiudexiaohuozi"><img avatar="李淑旗" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884718" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/youxiudexiaohuozi" class="author">/youxiudexiaohuozi</a>
+<span class='timeago' title='2019-06-11 22:56:29 +0800'>
+2019-06-11 22:56
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884718' username='youxiudexiaohuozi'>
+<p>3\1</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884756' id='note_1884756' line_code=''>
+<a href="/taosiyu" class="avatar" name="陶思宇" username="taosiyu"><img avatar="陶思宇" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884756" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/taosiyu" class="author">/taosiyu</a>
+<span class='timeago' title='2019-06-11 23:15:01 +0800'>
+2019-06-11 23:15
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884756' username='taosiyu'>
+<p>5</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884770' id='note_1884770' line_code=''>
+<a href="/ShenKaiQi_py" class="avatar" name="申凯琦" username="ShenKaiQi_py"><img alt="4978701_shenkaiqi_py" class="ui avatar image" src="https://avatar.gitee.com/uploads/1/4978701_ShenKaiQi_py.png!avatar60?1557833119" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884770" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/ShenKaiQi_py" class="author">/ShenKaiQi_py</a>
+<span class='timeago' title='2019-06-11 23:24:26 +0800'>
+2019-06-11 23:24
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884770' username='ShenKaiQi_py'>
+<p>5</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884787' id='note_1884787' line_code=''>
+<a href="/an_wen" class="avatar" name="安文" username="an_wen"><img avatar="安文" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884787" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/an_wen" class="author">/an_wen</a>
+<span class='timeago' title='2019-06-11 23:42:25 +0800'>
+2019-06-11 23:42
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884787' username='an_wen'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884789' id='note_1884789' line_code=''>
+<a href="/oddgod" class="avatar" name="张珵" username="oddgod"><img alt="4978674_oddgod" class="ui avatar image" src="https://avatar.gitee.com/uploads/74/4978674_oddgod.png!avatar60?1557798063" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884789" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/oddgod" class="author">/oddgod</a>
+<span class='timeago' title='2019-06-11 23:55:15 +0800'>
+2019-06-11 23:55
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884789' username='oddgod'>
+<p>5</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884797' id='note_1884797' line_code=''>
+<a href="/leilei_1" class="avatar" name="雷磊" username="leilei_1"><img avatar="雷磊" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884797" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/leilei_1" class="author">/leilei_1</a>
+<span class='timeago' title='2019-06-12 00:06:57 +0800'>
+2019-06-12 00:06
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884797' username='leilei_1'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884804' id='note_1884804' line_code=''>
+<a href="/wangfeifei11" class="avatar" name="王非非" username="wangfeifei11"><img alt="4904493_wangfeifei11" class="ui avatar image" src="https://avatar.gitee.com/uploads/93/4904493_wangfeifei11.png!avatar60?1557281502" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884804" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/wangfeifei11" class="author">/wangfeifei11</a>
+<span class='timeago' title='2019-06-12 00:26:21 +0800'>
+2019-06-12 00:26
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884804' username='wangfeifei11'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884824' id='note_1884824' line_code=''>
+<a href="/lixuancen" class="avatar" name="李宣岑" username="lixuancen"><img avatar="李宣岑" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884824" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/lixuancen" class="author">/lixuancen</a>
+<span class='timeago' title='2019-06-12 08:06:34 +0800'>
+2019-06-12 08:06
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884824' username='lixuancen'>
+<p>3</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1884827' id='note_1884827' line_code=''>
+<a href="/zhaoruiqiang" class="avatar" name="赵瑞强" username="zhaoruiqiang"><img avatar="赵瑞强" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1884827" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/zhaoruiqiang" class="author">/zhaoruiqiang</a>
+<span class='timeago' title='2019-06-12 08:13:59 +0800'>
+2019-06-12 08:13
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1884827' username='zhaoruiqiang'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1886334' id='note_1886334' line_code=''>
+<a href="/he_qing_qing" class="avatar" name="何庆青" username="he_qing_qing"><img alt="4978713_he_qing_qing" class="ui avatar image" src="https://avatar.gitee.com/uploads/13/4978713_he_qing_qing.png!avatar60?1557390947" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1886334" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/he_qing_qing" class="author">/he_qing_qing</a>
+<span class='timeago' title='2019-06-13 08:49:28 +0800'>
+2019-06-13 08:49
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1886334' username='he_qing_qing'>
+<p>5</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+<div class='comment note pr_note' data-depth='0' data-discussion='discussion-issue-1576943-' data-note-id='1886450' id='note_1886450' line_code=''>
+<a href="/qwezyj" class="avatar" name="朱英杰" username="qwezyj"><img avatar="朱英杰" class="ui avatar image" />
+</a><div class='content arrow_box'>
+<div class='title'>
+<div class='actions float-right'>
+<a href="#note_1886450" class="reply" title="此回复链接地址"><i class='iconfont icon-link'></i>
+</a></div>
+<a href="/qwezyj" class="author">/qwezyj</a>
+<span class='timeago' title='2019-06-13 10:10:00 +0800'>
+2019-06-13 10:10
+</span>
+
+</div>
+<div class='text note-content markdown-body' type='note' typeId='1886450' username='qwezyj'>
+<p>4</p></div>
+<div class='ui inverted dimmer'>
+<div class='ui loader'></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<script>
+  $('.comments .comment .commenter-role-label').popup();
+  $('.markdown-body pre code').each(function (i, block) {
+    hljs.highlightBlock(block);
+  })
+</script>
+
+<div class='ui segment' id='comment-loadder'>
+<div class='ui loader' id='loadding-state'></div>
+</div>
+<div class='js-main-target-form'></div>
+<p class='text-center'>
+<a href="/login">登录</a>
+后才可以发表评论
+</p>
+<script>
+  (function() {
+    $(function() {
+      return Notes.init();
+    });
+  
+  }).call(this);
+</script>
+<style>
+  #comment-loadder {
+    box-shadow: none;
+    margin: 0px;
+    border: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  #loadding-state {
+    top: 180px !important;
+  }
+  .ui.segment#comment-loadder {
+    border: 0px;
+  }
+</style>
+
+</div>
+</div>
+<div class='five wide column'>
+<div class='git-issue-sidebar'>
+<form accept-charset="UTF-8" action="/old_boy_python_stack__22/teaching_plan/issues/IXSRZ" class="edit_issue" id="edit_issue_1576943" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="Rk6vhganRdFlNDBjH32Wu1RkIF3PoWdgak44ccmSkIw=" /></div><div class='issue-sidebar'>
+<input id="issue_assignee_id" name="issue[assignee_id]" type="hidden" value="0" />
+<div id='issue-collaborator-ids'>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>负责人</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline floating users dropdown issue-collaborators' id='issue-collaborators'>
+<div class='selected-users'></div>
+<div class='text'>
+未设置
+</div>
+<div class='menu fluid'>
+<div class='ui icon search input'>
+<i class='search icon'></i>
+<input placeholder='搜索对象' type='text'>
+</div>
+<div class='scrolling menu fluid'>
+<div class='item' data-value='4920544' id='issue-user-4920544'>
+<img avatar="太白金星" class="ui avatar mini image" />
+太白金星
+<div class='username'>tbteacher</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='73459' id='issue-user-73459'>
+<img avatar="武沛齐" class="ui avatar mini image" />
+武沛齐
+<div class='username'>wupeiqi</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='1717807' id='issue-user-1717807'>
+<img avatar="胡海洋" class="ui avatar mini image" />
+胡海洋
+<div class='username'>HuHaiYang</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='1812293' id='issue-user-1812293'>
+<img avatar="安文" class="ui avatar mini image" />
+安文
+<div class='username'>an_wen</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='2206778' id='issue-user-2206778'>
+<img avatar="蔡世楠" class="ui avatar mini image" />
+蔡世楠
+<div class='username'>poochin</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4904425' id='issue-user-4904425'>
+<img alt="4904425_ywy0326" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/25/4904425_ywy0326.png!avatar30?1553849013" />
+于文洋
+<div class='username'>ywy0326</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4904459' id='issue-user-4904459'>
+<img avatar="程根" class="ui avatar mini image" />
+程根
+<div class='username'>mini_python</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4904493' id='issue-user-4904493'>
+<img alt="4904493_wangfeifei11" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/93/4904493_wangfeifei11.png!avatar30?1557281502" />
+王非非
+<div class='username'>wangfeifei11</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4904677' id='issue-user-4904677'>
+<img avatar="张东升" class="ui avatar mini image" />
+张东升
+<div class='username'>Ojb_k</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4904925' id='issue-user-4904925'>
+<img avatar="朱英杰" class="ui avatar mini image" />
+朱英杰
+<div class='username'>qwezyj</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4909248' id='issue-user-4909248'>
+<img avatar="七情" class="ui avatar mini image" />
+七情
+<div class='username'>s1046765710</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4911169' id='issue-user-4911169'>
+<img avatar="肖文鑫" class="ui avatar mini image" />
+肖文鑫
+<div class='username'>wenxin1120</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4912128' id='issue-user-4912128'>
+<img avatar="Eva_J" class="ui avatar mini image" />
+Eva_J
+<div class='username'>Eva-J</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4917605' id='issue-user-4917605'>
+<img avatar="庄博" class="ui avatar mini image" />
+庄博
+<div class='username'>boupup</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4922907' id='issue-user-4922907'>
+<img avatar="李宣岑" class="ui avatar mini image" />
+李宣岑
+<div class='username'>lixuancen</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4963843' id='issue-user-4963843'>
+<img avatar="蒋春生" class="ui avatar mini image" />
+蒋春生
+<div class='username'>PythonAV</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4974535' id='issue-user-4974535'>
+<img avatar="苏守丽" class="ui avatar mini image" />
+苏守丽
+<div class='username'>fengerwuyou</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4976266' id='issue-user-4976266'>
+<img avatar="纳钦" class="ui avatar mini image" />
+纳钦
+<div class='username'>atlaschen</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978631' id='issue-user-4978631'>
+<img avatar="叶又彪" class="ui avatar mini image" />
+叶又彪
+<div class='username'>luyi0105</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978645' id='issue-user-4978645'>
+<img avatar="张宝壮" class="ui avatar mini image" />
+张宝壮
+<div class='username'>zhangbaozhuang</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978654' id='issue-user-4978654'>
+<img avatar="常玉宏" class="ui avatar mini image" />
+常玉宏
+<div class='username'>changyuhong</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978657' id='issue-user-4978657'>
+<img avatar="尤利阳" class="ui avatar mini image" />
+尤利阳
+<div class='username'>youliyang</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978659' id='issue-user-4978659'>
+<img avatar="刘存龙" class="ui avatar mini image" />
+刘存龙
+<div class='username'>liucunlong</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978662' id='issue-user-4978662'>
+<img avatar="吴琼" class="ui avatar mini image" />
+吴琼
+<div class='username'>wuqiong1969</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978663' id='issue-user-4978663'>
+<img avatar="郭占宇" class="ui avatar mini image" />
+郭占宇
+<div class='username'>guozhanyu</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978666' id='issue-user-4978666'>
+<img avatar="杜宇" class="ui avatar mini image" />
+杜宇
+<div class='username'>duyu789</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978667' id='issue-user-4978667'>
+<img avatar="李淑旗" class="ui avatar mini image" />
+李淑旗
+<div class='username'>youxiudexiaohuozi</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978670' id='issue-user-4978670'>
+<img avatar="崔雪飞" class="ui avatar mini image" />
+崔雪飞
+<div class='username'>cuixuefei</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978674' id='issue-user-4978674'>
+<img alt="4978674_oddgod" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/74/4978674_oddgod.png!avatar30?1557798063" />
+张珵
+<div class='username'>oddgod</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978675' id='issue-user-4978675'>
+<img avatar="聂红旭" class="ui avatar mini image" />
+聂红旭
+<div class='username'>niehongxu</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978676' id='issue-user-4978676'>
+<img alt="4978676_luo_xin_yu" class="ui avatar mini image" src="https://gitee.com/uploads/76/4978676_luo_xin_yu.png?1557105064" />
+罗新宇
+<div class='username'>luo_xin_yu</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978678' id='issue-user-4978678'>
+<img avatar="马保兴" class="ui avatar mini image" />
+马保兴
+<div class='username'>mabaoxing</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978679' id='issue-user-4978679'>
+<img avatar="路庆莹" class="ui avatar mini image" />
+路庆莹
+<div class='username'>luqingying</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978680' id='issue-user-4978680'>
+<img alt="4978680_duxiangxi" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/80/4978680_duxiangxi.png!avatar30?1560332056" />
+杜相玺
+<div class='username'>duxiangxi</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978681' id='issue-user-4978681'>
+<img avatar="陶思宇" class="ui avatar mini image" />
+陶思宇
+<div class='username'>taosiyu</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978682' id='issue-user-4978682'>
+<img alt="4978682_li_shuai1" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/82/4978682_li_shuai1.png!avatar30?1557231990" />
+李帅
+<div class='username'>li_shuai1</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978683' id='issue-user-4978683'>
+<img avatar="雷磊" class="ui avatar mini image" />
+雷磊
+<div class='username'>leilei_1</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978684' id='issue-user-4978684'>
+<img avatar="吴帅" class="ui avatar mini image" />
+吴帅
+<div class='username'>WU_SHUAI</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978685' id='issue-user-4978685'>
+<img avatar="杨镇铭" class="ui avatar mini image" />
+杨镇铭
+<div class='username'>yangzhenming123</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978686' id='issue-user-4978686'>
+<img avatar="王颖" class="ui avatar mini image" />
+王颖
+<div class='username'>WangYing22</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978688' id='issue-user-4978688'>
+<img avatar="王兴豪" class="ui avatar mini image" />
+王兴豪
+<div class='username'>wang_xing_hao</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978690' id='issue-user-4978690'>
+<img avatar="赵瑞强" class="ui avatar mini image" />
+赵瑞强
+<div class='username'>zhaoruiqiang</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978694' id='issue-user-4978694'>
+<img avatar="杨得港" class="ui avatar mini image" />
+杨得港
+<div class='username'>yangdegang</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978695' id='issue-user-4978695'>
+<img avatar="吴迪" class="ui avatar mini image" />
+吴迪
+<div class='username'>wudipython</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978696' id='issue-user-4978696'>
+<img avatar="程德浩" class="ui avatar mini image" />
+程德浩
+<div class='username'>chengdehao</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978698' id='issue-user-4978698'>
+<img alt="4978698_matt-pei" class="ui avatar mini image" src="https://gitee.com/uploads/98/4978698_matt-pei.png?1556438433" />
+裴贺
+<div class='username'>matt-pei</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978699' id='issue-user-4978699'>
+<img avatar="张雷" class="ui avatar mini image" />
+张雷
+<div class='username'>zhang_lei_01</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978700' id='issue-user-4978700'>
+<img avatar="袁金钺" class="ui avatar mini image" />
+袁金钺
+<div class='username'>yuanjinyue</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978701' id='issue-user-4978701'>
+<img alt="4978701_shenkaiqi_py" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/1/4978701_ShenKaiQi_py.png!avatar30?1557833119" />
+申凯琦
+<div class='username'>ShenKaiQi_py</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978704' id='issue-user-4978704'>
+<img avatar="高杰" class="ui avatar mini image" />
+高杰
+<div class='username'>gaogaojie</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978713' id='issue-user-4978713'>
+<img alt="4978713_he_qing_qing" class="ui avatar mini image" src="https://avatar.gitee.com/uploads/13/4978713_he_qing_qing.png!avatar30?1557390947" />
+何庆青
+<div class='username'>he_qing_qing</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978714' id='issue-user-4978714'>
+<img avatar="何家宝" class="ui avatar mini image" />
+何家宝
+<div class='username'>hejiabao</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4978717' id='issue-user-4978717'>
+<img avatar="吴政" class="ui avatar mini image" />
+吴政
+<div class='username'>wuxin131</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4987905' id='issue-user-4987905'>
+<img avatar="赵嘉伟" class="ui avatar mini image" />
+赵嘉伟
+<div class='username'>a522428989</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='4991362' id='issue-user-4991362'>
+<img avatar="王晟宇" class="ui avatar mini image" />
+王晟宇
+<div class='username'>wangshengyv</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+<div class='item' data-value='5010069' id='issue-user-5010069'>
+<img avatar="曾凡星" class="ui avatar mini image" />
+曾凡星
+<div class='username'>z274714564</div>
+<div class='actions for-assignee'>
+负责人
+<a class='btn-remove-assignee ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions for-collaborator'>
+协作者
+<a class='btn-remove-collaborator ui remove button'>
+<i class='iconfont icon-close'></i>
+</a>
+</div>
+<div class='actions'>
+<a class='btn-set-assignee ui button'>
++负责人
+</a>
+<a class='btn-set-collaborator ui button'>
++协作者
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>标签</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='default text' style=''>
+未设置
+</div>
+<div class='ui inline floating issue-labels dropdown'>
+<div class='text'></div>
+<div class='menu'></div>
+</div>
+<div class='labels'></div>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>项目</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline floating small dropdown'>
+<div class='text'>
+无关联项目
+</div>
+<input id="issue_program_id" name="issue[program_id]" type="hidden" value="0" />
+<div class='menu'>
+<div class='ui left icon search input'>
+<i class='iconfont icon-search'></i>
+<input placeholder='搜索项目' type='text'>
+</div>
+<div class='scrolling menu'>
+<div class='item' data-value='0'>
+无关联项目
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>里程碑</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline floating small dropdown'>
+<div class='text'>
+无里程碑
+</div>
+<input id="issue_milestone_id" name="issue[milestone_id]" type="hidden" value="0" />
+<div class='menu'>
+<div class='ui left icon search input'>
+<i class='iconfont icon-search'></i>
+<input placeholder='搜索里程碑' type='text'>
+</div>
+<div class='scrolling menu'>
+<div class='item' data-value='0'>
+无里程碑
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>关联分支</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline floating small dropdown'>
+<div class='text'>
+无关联分支
+</div>
+<input id="issue_branch" name="issue[branch]" type="hidden" />
+<div class='menu'>
+<div class='ui icon search input'>
+<i class='search icon'></i>
+<input placeholder='search branches' type='text'>
+</div>
+<div class='scrolling menu'>
+<div class='item' data-value=''>
+无关联分支
+</div>
+<div class='item' data-value='refs/heads/master'>master</div>
+</div>
+</div>
+</div>
+</div>
+<div class='issue-field date'>
+<div class='issue-field-label'>计划开始日期</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='default text'>
+未设置
+</div>
+<div class='add-on'>
+<div class='fa-calendar'></div>
+</div>
+<input id="issue_plan_started_at" name="issue[plan_started_at]" readonly="readonly" size="30" type="text" value="" />
+</div>
+<div class='issue-field date'>
+<div class='issue-field-label'>计划截止日期</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='default text'>
+未设置
+</div>
+<div class='add-on'>
+<div class='fa-calendar'></div>
+</div>
+<input id="issue_deadline" name="issue[deadline]" readonly="readonly" size="30" type="text" value="" />
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>置顶选项</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline small floating dropdown'>
+<div class='text'></div>
+<input id="issue_top_level" name="issue[top_level]" type="hidden" value="0" />
+<div class='menu'>
+<div class='item' data-value='3'>
+置顶等级：高
+</div>
+<div class='item' data-value='2'>
+置顶等级：中
+</div>
+<div class='item' data-value='1'>
+置顶等级：低
+</div>
+<div class='item' data-value='0'>
+不置顶
+</div>
+</div>
+</div>
+</div>
+<div class='issue-field'>
+<div class='issue-field-label'>优先级</div>
+<a class='issue-field-action'>
+<i class='iconfont icon-edit'></i>
+</a>
+<div class='ui inline small floating dropdown'>
+<div class='text'></div>
+<input id="issue_priority" name="issue[priority]" type="hidden" value="0" />
+<div class='menu'>
+<div class='item' data-value='0'>
+不指定
+</div>
+<div class='item' data-value='4'>
+严重
+</div>
+<div class='item' data-value='3'>
+主要
+</div>
+<div class='item' data-value='2'>
+次要
+</div>
+<div class='item' data-value='1'>
+不重要
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    var config;
+  
+    config = {
+      readonly: true,
+      locale: 'zh-CN',
+      labels: [],
+      labelsOptions: {
+        path: null,
+        source: '/old_boy_python_stack__22/teaching_plan/labels',
+        message: '无标签',
+        token: '',
+        admin: false,
+        manageUrl: '',
+        text: {
+          ok: '确定',
+          cancel: '取消',
+          editLabel: '编辑标签',
+          selectProject: '选择从哪个仓库导入',
+          manage: '管理'
+        },
+        tip: {
+          add: '新建标签',
+          edit: '编辑标签',
+          "import": '导入标签'
+        },
+        placeholder: {
+          label: '输入标签',
+          color: '#色值'
+        }
+      }
+    };
+  
+    window.Gitee.issuePage = {
+      sidebar: new Gitee.IssueSidebarHelper(config)
+    };
+  
+  }).call(this);
+</script>
+
+<div class='ui grid issue-buttons'>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+  .markdown-body img:not(.emoji){
+    display: inline-block !important;
+  }
+  #myAwesomeDropzone{
+    display: none
+  }
+</style>
+<script>
+  (function () {
+    var canEditIssue = false;
+  
+    Gitee.issuePage.logs = new Gitee.IssueLogsHelper({
+      $el: $('#git-issue .operate-logs'),
+      path: "/old_boy_python_stack__22/teaching_plan/issues/IXSRZ/operate_logs.json",
+      text: {
+        diffView: "查看改动内容",
+        newValue: "新值",
+        oldValue: "原值"
+      }
+    })
+  
+    Gitee.initIssueShow({
+      url: "/old_boy_python_stack__22/teaching_plan/issues/IXSRZ"
+    });
+  
+    if (canEditIssue) {
+      new Gitee.IssueEditHelper({
+        canModifyIssue: false,
+        canModifyIssueMain: false,
+        updatePath: "/old_boy_python_stack__22/teaching_plan/issues/IXSRZ.json",
+        sidebar: Gitee.issuePage.sidebar,
+        logs: Gitee.issuePage.logs,
+        text: {
+          noDescription: "暂无描述。",
+          titleLengthError: "标题长度应为 1 ~ 255 个字符",
+          charsetError: "不能包含 Emoji 表情或其他特殊字符！",
+          updateError: "更新失败，请稍后重试！"
+        },
+      })
+    }
+  
+    new Gitee.IssueCheckBoxes({
+      username: window.gon.username,
+      projectName: window.gon.project_name,
+      canModifyIssueMain: false
+    })
+  })();
+</script>
+<script>
+  $('.git-issue .commenter-role-label').popup();
+  $("#btn_close_issue").click(function() {
+    $(".new_note").submit();
+  });
+  
+  $("#editorissue-reply").on("keyup",function(){
+   if($("#editorissue-reply").val().length==0){
+      $("#only_comment").addClass("disabled");
+      $("#only_comment").attr("disabled","disabled");
+  
+      $("#comment_close").addClass("disabled");
+      $("#comment_close").attr("disabled","disabled");
+     }else{
+      $("#only_comment").removeClass("disabled");
+      $("#only_comment").removeAttr("disabled");
+  
+      $("#comment_close").removeClass("disabled");
+      $("#comment_close").removeAttr("disabled");
+     }
+  });
+  
+  $("#only_comment").addClass("disabled");
+  $("#only_comment").attr("disabled","disabled");
+  
+  $("#comment_close").addClass("disabled");
+  $("#comment_close").attr("disabled","disabled");
+  $(".js-close-discussion-note-form").hide();
+</script>
+
+<script>
+  Tree.initHighlightTheme('white')
+</script>
+</div>
+<footer id='git-footer-main'>
+<div class='ui container'>
+<div class='ui two column grid'>
+<div class='column git-footer-left'>
+<p><a href="https://gitee.com/" target="_blank">© Gitee.com  </a></p>
+<div class='ui three column grid' id='footer-left'>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a href="/about_us" class="item">关于我们</a>
+</div>
+<div class='item'>
+<a href="/terms" class="item">使用条款</a>
+</div>
+<div class='item'>
+<a href="/oschina/git-osc/issues" class="item">意见建议</a>
+</div>
+<div class='item'>
+<a href="/links.html" class="item">合作伙伴</a>
+</div>
+</div>
+</div>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a href="/api/v5/swagger" class="item">OpenAPI</a>
+</div>
+<div class='item'>
+<a href="/all-about-git" class="item">Git 大全</a>
+</div>
+<div class='item'>
+<a href="https://copycat.gitee.com/" class="item">代码克隆检测</a>
+</div>
+<div class='item'>
+<a href="/appclient" class="item">APP与插件下载</a>
+</div>
+</div>
+</div>
+<div class='column'>
+<div class='ui link list'>
+<div class='item'>
+<a href="https://gitee.com/help" class="item">帮助文档</a>
+</div>
+<div class='item'>
+<a href="https://gitee.com/git-osc/" class="item">更新日志</a>
+</div>
+<div class='item'>
+<a href="/gists" class="item">代码片段</a>
+</div>
+<div class='item'>
+<a href="/gitee-stars" class="item">码云封面人物</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='column right aligned followus git-footer-right'>
+<div class='qrcode weixin'>
+<img alt="Qrcode-weixin" src="https://assets.gitee.com/assets/qrcode-weixin-8ab7378f5545710bdb3ad5c9d17fedfe.jpg" />
+<p class='weixin-text'>微信服务号</p>
+</div>
+<div class='phone-and-qq column'>
+<div class='ui list official-support-container'>
+<div class='item'>
+<a href="//shang.qq.com/wpa/qunwpa?idkey=0d6c2fc0b5b71ac33405dd575bb490bf1a50e3c9a9f694e8a689cb59ee7dacc3" class="icon-popup" title="点击加入码云官方群"><i class='iconfont icon-logo-qq'></i>
+<span>
+官方技术支持QQ群：515965326
+</span>
+</a></div>
+<div class='item mail-and-zhihu'>
+<a href="mailto: git@oschina.cn"><i class='iconfont icon-ic-mail'></i>
+<span id='git-footer-email'>
+git#oschina.cn
+</span>
+</a><a href="https://www.zhihu.com/org/ma-yun-osc/ " target="_blank"><i class='iconfont icon-zhihu'></i>
+<span>
+码云Gitee
+</span>
+</a></div>
+<div class='item'>
+企业版售前及售后使用咨询：400-606-0201
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='bottombar'>
+<div class='ui container'>
+<div class='ui grid'>
+<div class='five wide column partner'>
+本站带宽由 <a href="https://www.anchnet.com/" target="_blank" title="anchnet"><img alt="51idc" src="/51idc.png" /></a> 提供
+</div>
+<div class='eleven wide column right aligned'>
+<div class='copyright'>
+<a href="http://www.beian.miit.gov.cn/">粤ICP备12009483号-8</a>
+开源中国出品
+</div>
+<i class='icon world'></i>
+<a href="/language/zh-CN">简 体
+</a>/
+<a href="/language/zh-TW">繁 體
+</a>/
+<a href="/language/en">English
+</a></div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+  var officialEmail = $('#git-footer-email').text()
+  $('#git-footer-main .icon-popup').popup({ position: 'bottom center' })
+  $('#git-footer-email').text(officialEmail.replace('#', '@'))
+</script>
+
+
+<div class='side-toolbar'>
+<div class='button toolbar-help'>
+<i class='iconfont icon-help'></i>
+</div>
+<div class='ui popup left center dark'>点此查找更多帮助</div>
+<div class='toolbar-help-dialog'>
+<div class='toolbar-dialog-header'>
+<h3 class='toolbar-dialog-title'>搜索帮助</h3>
+<form accept-charset="UTF-8" action="/help/load_keywords_data" class="toolbar-help-search-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='ui icon input fluid toolbar-help-search'>
+<input name='keywords' placeholder='请输入产品名称或问题' type='text'>
+<i class='icon search'></i>
+</div>
+</form>
+
+<i class='iconfont icon-close toolbar-dialog-close-icon'></i>
+</div>
+<div class='toolbar-dialog-content'>
+<div class='toolbar-help-hot-search'>
+<div class='toolbar-list'>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4114">Git 仓库基础操作</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4166">企业版和个人版功能对比</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4191">SSH 公钥设置</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4194">如何处理代码冲突</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4202">在小程序Web开发工具中使用Git做版本管理</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4232">仓库体积过大，如何减小？</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4233">组织私有成员超额，如何处理？</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4234">个人私有成员超过5人，怎么办？</a>
+</div>
+<div class='toolbar-list-item'>
+<a href="/help/articles/4235">Git LFS 操作指南</a>
+</div>
+</div>
+</div>
+<div class='toolbar-help-search-reseult'>
+<div class='toolbar-help-flex-column'>
+<div class='ui centered inline loader toolbar-help-loader'></div>
+<div class='toolbar-list'></div>
+<div class='toolbar-help-link-to-help'>
+<a href="" target="_blank">查看更多搜索结果</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  var opt = { position: 'left center' };
+  var $helpSideToolbar = $(".button.toolbar-help");
+  
+  $(function() {
+    if (false) {
+      $helpSideToolbar.popup(opt);
+    } else {
+      $helpSideToolbar.popup('show', opt);
+      setTimeout(function() {
+        $helpSideToolbar.popup('hide', opt);
+      }, 3000);
+    }
+  })
+</script>
+
+<div class='button share-link'>
+<i class='iconfont icon-share'></i>
+</div>
+<div class='ui popup dark'>
+<div class='header'>
+分享到
+</div>
+<div class='bdsharebuttonbox' style='display: flex'>
+<a class='iconfont icon-home-service-wechat' data-cmd='weixin' title='分享到微信'></a>
+<a class='iconfont icon-weibo' data-cmd='tsina' title='分享到新浪微博'></a>
+<a class='iconfont icon-qq' data-cmd='sqq' title='分享到QQ好友'></a>
+<a class='iconfont icon-qzone' data-cmd='qzone' title='分享到QQ空间'></a>
+</div>
+</div>
+<div class='popup button' id='home-comment'>
+<i class='iconfont icon-comment'></i>
+</div>
+<div class='ui popup dark'>评论</div>
+<div class='toolbar-appeal popup button'>
+<i class='iconfont icon-report'></i>
+</div>
+<div class='ui popup dark'>
+仓库举报
+</div>
+<script>
+  $('.toolbar-appeal').popup({ position: 'left center' });
+</script>
+
+<div class='button gotop popup' id='gotop'>
+<i class='iconfont icon-top'></i>
+</div>
+<div class='ui popup dark'>回到顶部</div>
+</div>
+<div class='form modal normal-modal tiny ui' id='unlanding-complaint-modal'>
+<i class='iconfont icon-close close'></i>
+<div class='header'>
+登录提示
+</div>
+<div class='container actions'>
+<div class='content'>
+该操作需登录码云帐号，请先登录后再操作。
+</div>
+<div class='ui orange icon large button ok'>
+立即登录
+</div>
+<div class='ui button blank cancel'>
+没有账号，去注册
+</div>
+</div>
+</div>
+<script>
+  var $elm = $('.toolbar-appeal');
+  
+  $elm.on('click', function() {
+    var modals = $("#unlanding-complaint-modal.normal-modal");
+    if (modals.length > 1) {
+      modals.eq(0).modal('show');
+    } else {
+      modals.modal('show');
+    }
+  })
+  $("#unlanding-complaint-modal.normal-modal").modal({
+    onDeny: function() {
+      window.location.href = "/signup?from=";
+    },
+    onApprove: function() {
+      window.location.href = "/login?from=";
+    }
+  })
+</script>
+
+<style>
+  .side-toolbar .bdsharebuttonbox a {
+    font-size: 24px;
+    color: white !important;
+    opacity: 0.9;
+    margin: 6px 6px 0px 6px;
+    background-image: none;
+    text-indent: 0;
+    height: auto;
+    width: auto;
+  }
+</style>
+<script>
+  (function() {
+    $('#project-user-message').popup({
+      position: 'left center'
+    });
+  
+  }).call(this);
+</script>
+<script>
+  Gitee.initSideToolbar({
+    hasComment: true,
+    commentUrl: '/old_boy_python_stack__22/teaching_plan#tree_comm_title'
+  })
+</script>
+<script>
+  window._bd_share_config = {
+    "common": {
+      "bdSnsKey": {},
+      "bdText": document.title,
+      "bdMini": "1",
+      "bdMiniList": ["bdxc","tqf","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"],
+      "bdPic": "",
+      "bdStyle": "1",
+      "bdSize": "32"
+    },
+    "share": {}
+  }
+</script>
+<script src="/bd_share/static/api/js/share.js" type="text/javascript"></script>
+
+
+<style>
+  .gitee-stars-main-widget{display:none;position:fixed;left:0;bottom:0;z-index:99}.gitee-stars-main-widget .close-icon{position:absolute;top:40px;left:20px;cursor:pointer}.gitee-stars-main-widget .people-image{width:200px;padding:30px 10px}
+</style>
+<div class='gitee-stars-main-widget'>
+<a href="https://oschina.gitee.io/6th?utm_source=gitee-gj" target="_blank"><img alt="Gitee_sixth" class="people-image" src="https://assets.gitee.com/assets/gitee_stars/gitee_sixth-7a689898aef58fa2e0185c840c8a3bb1.png" />
+<img alt="5th_float_left_close" class="close-icon" src="https://assets.gitee.com/assets/gitee_stars/5th_float_left_close-c1081affb1fde20c24fbe5fe27256c6f.png" />
+</a></div>
+<script>
+  $(function () {
+    var $giteeStarsWidget = $('.gitee-stars-main-widget')
+    var cookieKey = "visit-gitee-gitee_sixth"
+  
+    if ($.cookie(cookieKey) == 1) {
+      $giteeStarsWidget.hide()
+    } else {
+      $giteeStarsWidget.show()
+    }
+  
+    $giteeStarsWidget.on('click', '.close-icon', function (e) {
+      e.preventDefault()
+      $.cookie(cookieKey, 1, {path: '/', expires: 60})
+      $giteeStarsWidget.hide()
+    })
+  })
+</script>
+
+<script>
+  (function() {
+    this.__gac = {
+      domain: 'www.oschina.net'
+    };
+  
+  }).call(this);
+</script>
+<script defer src='//www.oschina.net/public/javascripts/cjl/ga.js?t=20160926' type='text/javascript'></script>
+
+</body>
+</html>

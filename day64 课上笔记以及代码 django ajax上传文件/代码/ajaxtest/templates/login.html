@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+</head>
+<body>
+<h1>你好，欢迎来到登录页面</h1>
+
+<form action="/login/" method="post">
+  {% csrf_token %}
+
+  用户名: <input type="text" id="username" name="username">
+  密码: <input type="password" id="password" name="password">
+  {#  <input type="submit" id="btn">#}
+  <input type="button" id="btn" value="确认">
+  <span style="color:red;font-size: 12px;" id="error"></span>
+</form>
+
+{#<button id="btn">提交</button>#}
+
+
+<script src="{% static 'jquery.js' %}"></script>
+{#<script src="/staic/js/comment.js">#}
+<script>
+
+
+$('#btn').click(function () {
+      // ret = requests.post('/login/',date={})  print(ret.content)
+      $.ajax({
+          url:"{% url 'login' %}",  //"/login/"
+          type:'post',
+          data:{
+              uname:$('#username').val(),
+              pwd:$('#password').val(),
+              csrfmiddlewaretoken:$('[name=csrfmiddlewaretoken]').val(),
+              csrfmiddlewaretoken:"{{ csrf_token }}", //"sdfasdgadg;oasd;foaj"
+          },
+          success:function (res) {   //'{"aa":1000,"bb":"kkk"}'
+              {#var resStr = JSON.parse(res);  #}
+              console.log(res,typeof res);
+              resStr = res;
+              //{"aa":3,"bb":"用户名或者密码错误!!!"}
+              if (resStr['aa'] === 3){
+                  var spanEle = document.createElement('span');
+                  $(spanEle).text(resStr['bb']);
+                  $('form').append(spanEle);
+                  $('#error').text(resStr['bb']);
+
+              }
+
+              else if(resStr['aa'] === 0){
+                  {#location.href=resStr['bb'];#}
+              }
+          }
+      })
+  })
+
+</script>
+
+</body>
+</html>

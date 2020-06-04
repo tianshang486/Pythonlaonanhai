@@ -1,0 +1,5 @@
+2019-05-29 20:20:21 PM - root - DEBUG[line :105]-6.logging模块:  debug 信息错误 test2
+2019-05-29 20:20:21 PM - root - INFO[line :106]-6.logging模块:  warning 信息错误 test2
+2019-05-29 20:20:21 PM - root - WARNING[line :107]-6.logging模块:  warning message test2
+2019-05-29 20:20:21 PM - root - ERROR[line :108]-6.logging模块:  error message test2
+2019-05-29 20:20:21 PM - root - CRITICAL[line :109]-6.logging模块:  critical message test2

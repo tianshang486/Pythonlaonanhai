@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
+  <!-- Bootstrap -->
+  <link href="{% static 'bootstrap-3.3.7-dist/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>编辑书籍</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+{#      <form action="" method="post" novalidate>#}
+{#        {% csrf_token %}#}
+{#        {% for bookform in book_model_form %}#}
+{#          <div class="form-group">#}
+{#            <label for="{{ bookform.id_for_label }}">{{ bookform.label }}</label>#}
+{#            {{ bookform }}#}
+{#            <span style="color: red;font-size: 12px;">{{ bookform.errors.0 }}</span>#}
+{##}
+{#          </div>#}
+{#        {% endfor %}#}
+{#        <button class="btn btn-success pull-right">提交</button>#}
+{#      </form>#}
+  {% include 'xx.html' %}
+    </div>
+  </div>
+
+</div>
+
+
+
+</body>
+</html>

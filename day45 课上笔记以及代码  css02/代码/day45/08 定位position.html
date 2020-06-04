@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+        }
+        .c2{
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            /*position: relative;  !*相对定位,保留原来的空间位置,相对自己原来的位置移动,以左上角为基准*!*/
+
+            /*top: 20px; 往下移20px,距离原来位置的上边框20px */
+            /*top: -20px;*/
+            /*left: 20px;*/
+            /*right: ;*/
+            /*bottom: ;*/
+
+            position: absolute; /* 绝对定位,不保留自己原来的位置,按照父级标签或者祖先级标签..设置了position为 relative的标签的位置进行移动,如果一直找不到设置了设个属性的标签,那么按照body标签来移动 */
+
+            top: 20px;
+            left: 20px;
+
+
+        }
+        .c3{
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+        .ccc{
+            height: 100px;
+            width: 200px;
+            background-color: purple;
+        }
+        .cc{
+            position: relative;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="ccc"></div>
+<div class="cc">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+</div>
+
+
+
+</body>
+</html>

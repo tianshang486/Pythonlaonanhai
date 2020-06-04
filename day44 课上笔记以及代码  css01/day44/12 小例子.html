@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动背景图示例</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .box {
+            width: 100%;
+            height: 500px;
+            background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562559715&di=b5ede7d287c2534e7763e11ab3588919&imgtype=jpg&er=1&src=http%3A%2F%2Ftx.haiqq.com%2Fuploads%2Fallimg%2F170510%2F02443464b-6.jpg") no-repeat center center;
+            background-attachment: fixed;
+        }
+        .d1 {
+            height: 500px;
+            background-color: tomato;
+        }
+        .d2 {
+            height: 500px;
+            background-color: steelblue;
+        }
+        .d3 {
+            height: 500px;
+            background-color: mediumorchid;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="box"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+</body>
+</html>

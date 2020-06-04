@@ -1,0 +1,2 @@
+def wahaha():
+    print('wahaha')

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="d1"></div>
+
+
+
+<script src="jquery.js"></script>
+<script>
+    //方式1
+    // $('#d1').click(function () {
+    //     $(this).css({'background-color':'green'});
+    // });
+    //方式2
+    $('#d1').on('click',function () {
+        $(this).css({'background-color':'green'});
+    })
+
+</script>
+</body>
+</html>
